@@ -1,0 +1,77 @@
+<style type="text/css">
+  span label {
+    width: 100px
+  }
+</style>
+<script type="text/javascript">
+  // Set window options
+  var width	= 400;
+  var height	= 400;
+  var left	= (screen.width/2)-(width/2);
+  var top		= (screen.height/2)-(height/2);
+  var url;
+
+  // Set translated items
+  $("label[for='name']").text(__('pair.configuration.name') + ':');
+  $("label[for='ID']").text(__('pair.configuration.ID') + ':');
+  $("label[for='Key']").text(__('pair.configuration.Key') + ':');
+ 
+
+
+
+	function configure()
+	{
+    $('.youless-err-msg').text('')
+		
+		var name 		= $("#name").val();
+		var ID 			= $("#ID").val();
+		var Key 		= $("#Key").val();
+		
+		var device = {
+				data: { // this data object is saved to- and unique for the device. It is passed on the get and set functions as 1st argument
+					id: name + '-' + ID // something unique, so your driver knows which physical device it is. A MAC address or Node ID, for example. This is required
+				},
+				name: name,
+				settings: {
+					name: name,
+					ID: ID,
+					Key: Key,
+				}
+			}
+		console.log('device', device)
+		Homey.emit( 'pair', device, function ( err, result ) {
+			if(err) {
+				$('.youless-err-msg').text(err)
+			}
+			else {
+				//Successfully connected
+				Homey.addDevice(device, function( err, result ){
+					if( err ) return console.error(err);
+          console.log( result);
+
+				});
+
+				//Done pairing
+				Homey.done();
+			}
+		} );
+	}
+</script>
+
+<p id="authentication_text" data-i18n="pair.authorization.configuration_explanation"></p>
+<p class="form-group">
+  <span class="input-wrap">
+    <label for="name"></label>
+    <input type="text" id="name"></input>
+	
+	<label for="ID"></label>
+    <input type="text" id="ID"></input>
+
+	<label for="Key"></label>
+    <input type="text" id="Key"></input>
+
+  </span>
+</p>
+<button class="button" id="authentication_button" onclick="configure();" data-i18n="pair.authorization.start_configuration" />
+<br /><br />
+<p class="youless-err-msg" style="color: #ff6300;"></p>

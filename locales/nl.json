@@ -1,0 +1,13 @@
+{
+  "pair": {
+		"authorization": {
+			"configure": "Vul naam, ID en Key hieronder in",
+			"start_configuration":"Opslaan!",
+			"configuration_explanation": ""
+		},
+    "configuration": {
+       "name": "naam",
+       "ID": "ID",
+	   "Key": "Key"}
+  }
+}

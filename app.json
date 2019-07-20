@@ -1,0 +1,75 @@
+{
+  "id": "nl.rebtor.tuya",
+  "version": "1.0.0",
+  "compatibility": ">=2.0.0",
+  "sdk": 2,
+  "name": {
+    "en": "Tuya",
+    "nl": "Tuya"
+  },
+  "description": {
+    "en": "Tuya devices",
+    "nl": "Tuya devices"
+  },
+  "category": [
+    "lights",
+    "appliances"
+  ],
+  "permissions": [],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "author": {
+    "name": "Rens Brandwijk",
+    "email": "rebtor@rebtor.nl"
+  },
+  "drivers": [
+    {
+      "id": "NEO_SmartPlug",
+      "name": {
+		"nl": "NEO SmartPlug 2000W",
+        "en": "NEO SmartPlug 2000W" 
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "pair": [
+        {
+          "id": "pair"
+      }],
+   "settings": [
+                        {
+                            "type": "group",
+                            "label": {
+                                "en": "General settings",
+                                "nl": "Algemene instellingen"
+                            },
+                            "children": [
+                                {
+                                    "id": "ID",
+                                    "type": "text",
+                                    "value": "",
+                                    "label": {
+                                        "en": "ID",
+                                        "nl": "ID"
+                                    }
+                                },
+                                {
+                                    "id": "Key",
+                                    "type": "text",
+                                    "value": "",
+                                    "label": {
+                                        "en": "Key",
+                                        "nl": "Key"
+                                    }
+                                }
+                              ]}],
+      "images": {
+        "large": "/drivers/NEO_SmartPlug/assets/images/large.png",
+        "small": "/drivers/NEO_SmartPlug/assets/images/small.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "pair": {
+		"authorization": {
+			"configure": "Register devicename, ID and key below",
+			"start_configuration":"Save!",
+			"configuration_explanation": ""
+		},
+    "configuration": {
+       "name": "Name",
+       "ID": "ID",
+	   "Key": "Key"}
+  }
+}
