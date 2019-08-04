@@ -1,6 +1,6 @@
 {
   "id": "nl.rebtor.tuya",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "compatibility": ">=2.0.0",
   "sdk": 2,
   "name": {
@@ -63,12 +63,78 @@
                                     "label": {
                                         "en": "Key",
                                         "nl": "Key"
-                                    }
+								}},									
+								{
+								"id": "IP",
+								"type": "text",
+								"value": "",
+								"label": {
+									"en": "IP",
+									"nl": "IP"
+								}
                                 }
                               ]}],
       "images": {
         "large": "/drivers/NEO_SmartPlug/assets/images/large.png",
         "small": "/drivers/NEO_SmartPlug/assets/images/small.png"
+      }
+    },
+	{
+      "id": "NEO_SmartPlug_3600",
+      "name": {
+		"nl": "NEO SmartPlug 3600W",
+        "en": "NEO SmartPlug 3600W" 
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff", 
+		"measure_power", 
+		"measure_voltage", 
+		"measure_current"
+      ],
+      "pair": [
+        {
+          "id": "pair"
+      }],	  
+   "settings": [
+                        {
+                            "type": "group",
+                            "label": {
+                                "en": "General settings",
+                                "nl": "Algemene instellingen"
+                            },
+                            "children": [
+                                {
+                                    "id": "ID",
+                                    "type": "text",
+                                    "value": "",
+                                    "label": {
+                                        "en": "ID",
+                                        "nl": "ID"
+                                    }
+                                },
+                                {
+                                    "id": "Key",
+                                    "type": "text",
+                                    "value": "",
+                                    "label": {
+                                        "en": "Key",
+                                        "nl": "Key"
+                                    }},
+								{
+								"id": "IP",
+								"type": "text",
+								"value": "",
+								"label": {
+									"en": "IP",
+									"nl": "IP"
+								}
+                                }
+								
+                              ]}],
+      "images": {
+        "large": "/drivers/NEO_SmartPlug 3600/assets/images/large.png",
+        "small": "/drivers/NEO_SmartPlug 3600/assets/images/small.png"
       }
     }
   ]

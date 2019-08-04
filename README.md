@@ -1,9 +1,12 @@
-# Tuya devices homey app🌧 🔌
+﻿# Tuya devices homey app🌧 🔌
 
 A implementation of [TuyAPI] (https://github.com/codetheweb/tuyapi/) for use with homey. 
 
 ## CHANGELOG
 
+* 1.0.1
+	- Added support for NEO Coolcam smartplug 3600W
+	- You can now use IP instead of ID to connect devices
 * 1.0.0
 	- Initial version with support for NEO Coolcam smartplug 2000W
 
@@ -17,8 +20,9 @@ Warning: This app is not plug and play finding the ID and Key needed tot communi
 ## 📝 Notes
 - Only one TCP connection can be in use with a device at once. If using this, do not have the app on your phone open.
 - Some devices ship with older firmware that may not work with `tuyapi`.  If you're experiencing issues, please try updating the device's firmware in the official app.
-- I think other smartplugs from tuya may work to with this app. The 3600 watt version from NEO Coolcam is on its way from China.
+
 
 ## DEVICES
 - NEO Coolcam 2000 watt smartplug
+- NEO Coolcam 3600 watt smartplug
 

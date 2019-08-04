@@ -1,13 +1,14 @@
 {
   "pair": {
 		"authorization": {
-			"configure": "Vul naam, ID en Key hieronder in",
+			"configure": "Vul naam, (ID of IP) en Key hieronder in",
 			"start_configuration":"Opslaan!",
 			"configuration_explanation": ""
 		},
     "configuration": {
        "name": "naam",
        "ID": "ID",
+	   "IP": "IP",
 	   "Key": "Key"}
   }
 }

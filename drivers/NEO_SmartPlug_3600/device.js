@@ -26,8 +26,10 @@ function Tuyadevicedata(device_data) {
 	    var APIdevice = new TuyAPI({
 		id: device.getSetting('ID'),
 		key: device.getSetting('Key'),
-		ip: device.getSetting('IP')});
+		ip: device.getSetting('IP'),
+		schema: true});
 
+		var connectedd = false
 		
 		// Find device on network
 		APIdevice.find().then(() => {
@@ -43,27 +45,53 @@ function Tuyadevicedata(device_data) {
 		// Add event listeners
 		APIdevice.on('connected', () => {
 		console.log('Connected to device!');
+		connectedd = true
 		});
 
 		APIdevice.on('disconnected', () => {
 		console.log('Disconnected from device.');
+		connectedd = false
 		APIdevice.find().then(() => {
-		// Connect to device
 		APIdevice.connect();
 	});
 	});
 
 		APIdevice.on('error', error => {
-		  console.log('Error!', error);
+		console.log('Error!', error);
 		});
 
 		APIdevice.on('data', data => {
-		console.log('Data from device:', data);
+		
+		//console.log('Data from device:', data);
+		//console.log('Data 1', Boolean(data.dps['1']));
+		//console.log('Data 18',Boolean(data.dps['18']));
+		//console.log('Data 19',Boolean(data.dps['19']));
+		//console.log('Data 20',Boolean(data.dps['20']));
+		
+		var count = 0
+		
+		if (Boolean(data.dps['1'])) {
 		device.setCapabilityValue('onoff', data.dps['1'])
-		.catch( err => {
-		console.error(err);
+		} else {count = count + 1}; 
+		if (Boolean(data.dps['18'])) {
+		device.setCapabilityValue('measure_current', 0+(data.dps['18']/1000))
+		} else {count = count + 1}; 
+		if (Boolean(data.dps['19'])) {
+		device.setCapabilityValue('measure_power', 0+(data.dps['19']/10))
+		} else {count = count + 1}; 
+		if (Boolean(data.dps['20'])) {
+		device.setCapabilityValue('measure_voltage', 0+(data.dps['20']/10))
+		} else {count = count + 1};	
+		console.log(count);
+		
+		if (count == 1) {
+		device.setCapabilityValue('onoff', true)};
+		if (count == 4) {
+		device.setCapabilityValue('onoff', false)
+		} 
 		});
-		});
+		
+
 
 
 	device.registerCapabilityListener('onoff', async ( value ) => {
@@ -74,8 +102,10 @@ function Tuyadevicedata(device_data) {
 		});
 	});
 
+	
+	
 // Disconnect after 10 seconds
-//setTimeout(() => { APIdevice.disconnect(); }, 50000);
+
  
 }
 
