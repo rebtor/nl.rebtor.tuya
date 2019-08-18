@@ -1,5 +1,8 @@
 {
   "pair": {
+  		"success" : "Device saved",
+		"required" : "ID or IP missing",
+		"keylength" : "Length of key wrong or missing key",	
 		"authorization": {
 			"configure": "Register devicename, ID and key below",
 			"start_configuration":"Save!",

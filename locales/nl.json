@@ -1,5 +1,8 @@
 {
   "pair": {
+		"success" : "Device opgeslagen",
+		"required" : "ID of IP mist",
+		"keylength" : "Lengte van de key incorrect of geen key",		
 		"authorization": {
 			"configure": "Vul naam, (ID of IP) en Key hieronder in",
 			"start_configuration":"Opslaan!",

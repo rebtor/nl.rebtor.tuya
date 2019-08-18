@@ -3,7 +3,8 @@
 A implementation of [TuyAPI] (https://github.com/codetheweb/tuyapi/) for use with homey. 
 
 ## CHANGELOG
-
+* 1.0.2
+	- Added check on ID or IP and key when adding device. 
 * 1.0.1
 	- Added support for NEO Coolcam smartplug 3600W
 	- You can now use IP instead of ID to connect devices
