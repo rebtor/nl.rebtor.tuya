@@ -15,6 +15,10 @@
     "lights",
     "appliances"
   ],
+  "homeyCommunityTopicId": 15811,
+  "author": {
+    "name": "Rens Brandwijk"
+  },
   "permissions": [],
   "images": {
     "large": "/assets/images/large.png",
