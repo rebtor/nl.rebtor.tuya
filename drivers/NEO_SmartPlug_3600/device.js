@@ -3,6 +3,15 @@
 const Homey = require('homey');
 const TuyAPI = require('tuyapi');
 var device = {};
+var logging = false;
+
+function devicelog(title, log) 
+	{
+	if(logging == true) 
+		{ 
+		console.log(title, log);
+		}
+	};
 
 class TuyaDevice extends Homey.Device {
 	
@@ -11,18 +20,15 @@ onInit() {
 		this.log('MyDevice has been inited');
 		this.log('name:', this.getName());
 
-		//Tuyadevicedata(this);
-		
 		Tuyadevicedata(this)		
 	}	
 };
-
 
 function Tuyadevicedata(device_data) { 
 
  var device = device_data;
 
- // Get device settings 
+		// Get device settings 
 	    var APIdevice = new TuyAPI({
 		id: device.getSetting('ID'),
 		key: device.getSetting('Key'),
@@ -44,69 +50,68 @@ function Tuyadevicedata(device_data) {
 
 		// Add event listeners
 		APIdevice.on('connected', () => {
-		console.log('Connected to device!');
+		devicelog('Connected to device!');
 		connectedd = true
+		device.setAvailable();
 		});
 
 		APIdevice.on('disconnected', () => {
-		console.log('Disconnected from device.');
+		devicelog('Disconnected from device.');
 		connectedd = false
+		device.setUnavailable();
 		APIdevice.find().then(() => {
 		APIdevice.connect();
-	});
-	});
+		});
+		});
 
 		APIdevice.on('error', error => {
-		console.log('Error!', error);
+		devicelog('Error!', error);
 		});
 
 		APIdevice.on('data', data => {
 		
-		//console.log('Data from device:', data);
-		//console.log('Data 1', Boolean(data.dps['1']));
-		//console.log('Data 18',Boolean(data.dps['18']));
-		//console.log('Data 19',Boolean(data.dps['19']));
-		//console.log('Data 20',Boolean(data.dps['20']));
+		if(data.dps.hasOwnProperty('1') == true) 
+			{
+				device.setCapabilityValue('onoff', data.dps['1'])
+				.catch( err => {
+				console.error(err);
+				});
+			}
 		
-		var count = 0
+		if(data.dps.hasOwnProperty('18') == true) 
+			{
+				device.setCapabilityValue('measure_current', data.dps['18']/1000)
+				.catch( err => {
+				console.error(err);
+				});
+			}
 		
-		if (Boolean(data.dps['1'])) {
-		device.setCapabilityValue('onoff', data.dps['1'])
-		} else {count = count + 1}; 
-		if (Boolean(data.dps['18'])) {
-		device.setCapabilityValue('measure_current', 0+(data.dps['18']/1000))
-		} else {count = count + 1}; 
-		if (Boolean(data.dps['19'])) {
-		device.setCapabilityValue('measure_power', 0+(data.dps['19']/10))
-		} else {count = count + 1}; 
-		if (Boolean(data.dps['20'])) {
-		device.setCapabilityValue('measure_voltage', 0+(data.dps['20']/10))
-		} else {count = count + 1};	
-		console.log(count);
+		if(data.dps.hasOwnProperty('19') == true) 
+			{
+				device.setCapabilityValue('measure_power', data.dps['19']/10)
+				.catch( err => {
+				console.error(err);
+				});
+			}
 		
-		if (count == 1) {
-		device.setCapabilityValue('onoff', true)};
-		if (count == 4) {
-		device.setCapabilityValue('onoff', false)
-		} 
+		if(data.dps.hasOwnProperty('20') == true) 
+			{
+				device.setCapabilityValue('measure_power', data.dps['20']/10)
+				.catch( err => {
+				console.error(err);
+				});
+			}		
+
 		});
 		
-
-
-
 	device.registerCapabilityListener('onoff', async ( value ) => {
-	device.log('value', value);
+	devicelog('Device value: ', value);
 	return APIdevice.set({set: value})
 	.catch( err => {
 		console.error(err);
 		});
 	});
 
-	
-	
-// Disconnect after 10 seconds
-
- 
 }
 
 module.exports = TuyaDevice;

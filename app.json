@@ -1,6 +1,6 @@
 {
   "id": "nl.rebtor.tuya",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "compatibility": ">=2.0.0",
   "sdk": 2,
   "name": {
@@ -29,7 +29,119 @@
     "email": "rebtor@rebtor.nl"
   },
   "drivers": [
-    {
+       {
+      "id": "LSC_Smart_Power_Plug",
+      "name": {
+		"nl": "LSC Smart Power Plug",
+        "en": "LSC Smart Power Plug" 
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "pair": [
+        {
+          "id": "pair"
+      }],
+   "settings": [
+                        {
+                            "type": "group",
+                            "label": {
+                                "en": "General settings",
+                                "nl": "Algemene instellingen"
+                            },
+                            "children": [
+                                {
+                                    "id": "ID",
+                                    "type": "text",
+                                    "value": "",
+                                    "label": {
+                                        "en": "ID",
+                                        "nl": "ID"
+                                    }
+                                },
+                                {
+                                    "id": "Key",
+                                    "type": "text",
+                                    "value": "",
+                                    "label": {
+                                        "en": "Key",
+                                        "nl": "Key"
+								}},									
+								{
+								"id": "IP",
+								"type": "text",
+								"value": "",
+								"label": {
+									"en": "IP",
+									"nl": "IP"
+								}
+                                }
+                              ]}],
+      "images": {
+        "large": "/drivers/LSC_Smart_Power_Plug/assets/images/large.png",
+        "small": "/drivers/LSC_Smart_Power_Plug/assets/images/small.png"
+      }
+    },
+	{
+      "id": "LSC_Smart_LED_Light_Strip",
+      "name": {
+		"nl": "LSC Smart LED Light Strip",
+        "en": "LSC Smart LED Light Strip" 
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+		"dim",
+		"light_hue",
+		"light_saturation",
+		"light_mode"
+      ],
+      "pair": [
+        {
+          "id": "pair"
+      }],
+   "settings": [
+                        {
+                            "type": "group",
+                            "label": {
+                                "en": "General settings",
+                                "nl": "Algemene instellingen"
+                            },
+                            "children": [
+                                {
+                                    "id": "ID",
+                                    "type": "text",
+                                    "value": "",
+                                    "label": {
+                                        "en": "ID",
+                                        "nl": "ID"
+                                    }
+                                },
+                                {
+                                    "id": "Key",
+                                    "type": "text",
+                                    "value": "",
+                                    "label": {
+                                        "en": "Key",
+                                        "nl": "Key"
+								}},									
+								{
+								"id": "IP",
+								"type": "text",
+								"value": "",
+								"label": {
+									"en": "IP",
+									"nl": "IP"
+								}
+                                }
+                              ]}],
+      "images": {
+        "large": "/drivers/LSC_Smart_LED_Light_Strip/assets/images/large.png",
+        "small": "/drivers/LSC_Smart_LED_Light_Strip/assets/images/small.png"
+      }
+    },
+     {
       "id": "NEO_SmartPlug",
       "name": {
 		"nl": "NEO SmartPlug 2000W",

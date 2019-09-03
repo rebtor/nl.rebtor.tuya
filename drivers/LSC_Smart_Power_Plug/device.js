@@ -13,14 +13,14 @@ function devicelog(title, log)
 		}
 	};
 
-
 class TuyaDevice extends Homey.Device {
 	
-
 onInit() {
-		devicelog('MyDevice has been inited');
-		devicelog('name:', this.getName());
+		this.log('MyDevice has been inited');
+		this.log('name:', this.getName());
 
+		//Tuyadevicedata(this);
+		
 		Tuyadevicedata(this)		
 	}	
 };
@@ -51,12 +51,12 @@ function Tuyadevicedata(device_data) {
 
 		// Add event listeners
 		APIdevice.on('connected', () => {
-		devicelog('Device: ','Connected to device!');
+		devicelog('Connected to device!');
 		device.setAvailable();
 		});
 
 		APIdevice.on('disconnected', () => {
-		devicelog('Device: ','Disconnected from device.');
+		devicelog('Disconnected from device.');
 		APIdevice.find().then(() => {
 		// Connect to device
 		APIdevice.connect();
@@ -84,7 +84,7 @@ function Tuyadevicedata(device_data) {
 		});
 
 		APIdevice.on('data', data => {
-		devicelog('Data from device:', data);
+		// devicelog('Data from device:', data);
 		if(data.dps.hasOwnProperty('1') == true) 
 			{
 				device.setCapabilityValue('onoff', data.dps['1'])
@@ -96,7 +96,7 @@ function Tuyadevicedata(device_data) {
 
 
 	device.registerCapabilityListener('onoff', async ( value ) => {
-	devicelog('value', value);
+	//device.log('value', value);
 	return APIdevice.set({set: value})
 	.catch( err => {
 		console.error(err);
