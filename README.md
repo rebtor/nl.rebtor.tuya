@@ -3,6 +3,9 @@
 A implementation of [TuyAPI] (https://github.com/codetheweb/tuyapi/) for use with homey. 
 
 ## CHANGELOG
+* 1.0.4
+	- Optimized and centralized code.  
+	- Updated TuyAPI to version 5.1.3 
 * 1.0.3
 	- Added support for LSC Smart LED light Strip (action)	and LSC smart power plug (action)
 	- Optimized data processing from devices
@@ -16,7 +19,6 @@ A implementation of [TuyAPI] (https://github.com/codetheweb/tuyapi/) for use wit
 
 ## Known issues
 * recovery from powerloss can crash the app. 
-* Devices must be on when app starts. 
 * Setup (getting the key) procedure does not work on some IOS devices. See https://github.com/codetheweb/tuyapi/issues/215 for possible solutions. 
 * Entering a wrong key can make the app crash. 
 	

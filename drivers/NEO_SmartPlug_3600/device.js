@@ -1,116 +1,61 @@
 'use strict';
 
+// constanten
 const Homey = require('homey');
 const TuyAPI = require('tuyapi');
+const Tuydriver = require('tuydriver');
+
 var device = {};
-var logging = false;
 
-function devicelog(title, log) 
-	{
-	if(logging == true) 
-		{ 
-		console.log(title, log);
-		}
-	};
 
+// start device
 class TuyaDevice extends Homey.Device {
-	
 
 onInit() {
-		this.log('MyDevice has been inited');
-		this.log('name:', this.getName());
-
+		Tuydriver.devicelog('Device: ','NEO Coolcam 3600w has been inited');
+		Tuydriver.devicelog('Device name: ', this.getName());
 		Tuyadevicedata(this)		
 	}	
 };
 
+
 function Tuyadevicedata(device_data) { 
+		var device = device_data;
+		var APIdevice = new TuyAPI(
+			{
+				id: device.getSetting('ID'),
+				key: device.getSetting('Key'),
+				ip: device.getSetting('IP')
+			}
+		);
 
- var device = device_data;
-
-		// Get device settings 
-	    var APIdevice = new TuyAPI({
-		id: device.getSetting('ID'),
-		key: device.getSetting('Key'),
-		ip: device.getSetting('IP'),
-		schema: true});
-
-		var connectedd = false
+		device.setUnavailable();
+		Tuydriver.reconnect(APIdevice, device);
 		
-		// Find device on network
-		APIdevice.find().then(() => {
-		// Connect to device
-		APIdevice.connect().catch( err => {
-		console.error(err);
-		});
-		})
-		.catch( err => {
-		console.error(err);
-		});
-
 		// Add event listeners
 		APIdevice.on('connected', () => {
-		devicelog('Connected to device!');
-		connectedd = true
+		Tuydriver.devicelog('Connected to device!');
 		device.setAvailable();
 		});
 
 		APIdevice.on('disconnected', () => {
-		devicelog('Disconnected from device.');
-		connectedd = false
+		Tuydriver.devicelog('Disconnected from device.');
 		device.setUnavailable();
-		APIdevice.find().then(() => {
-		APIdevice.connect();
-		});
 		});
 
 		APIdevice.on('error', error => {
-		devicelog('Error!', error);
+		Tuydriver.devicelog('Error: ', error);
+		device.setUnavailable();
 		});
 
 		APIdevice.on('data', data => {
-		
-		if(data.dps.hasOwnProperty('1') == true) 
-			{
-				device.setCapabilityValue('onoff', data.dps['1'])
-				.catch( err => {
-				console.error(err);
-				});
-			}
-		
-		if(data.dps.hasOwnProperty('18') == true) 
-			{
-				device.setCapabilityValue('measure_current', data.dps['18']/1000)
-				.catch( err => {
-				console.error(err);
-				});
-			}
-		
-		if(data.dps.hasOwnProperty('19') == true) 
-			{
-				device.setCapabilityValue('measure_power', data.dps['19']/10)
-				.catch( err => {
-				console.error(err);
-				});
-			}
-		
-		if(data.dps.hasOwnProperty('20') == true) 
-			{
-				device.setCapabilityValue('measure_power', data.dps['20']/10)
-				.catch( err => {
-				console.error(err);
-				});
-			}		
+		Tuydriver.devicelog('Data from device:', data);
+		Tuydriver.processdata(device, data, 'onoff');
+		});
 
-		});
-		
-	device.registerCapabilityListener('onoff', async ( value ) => {
-	devicelog('Device value: ', value);
-	return APIdevice.set({set: value})
-	.catch( err => {
-		console.error(err);
-		});
-	});
+		device.registerCapabilityListener('onoff', async ( value ) => {
+		Tuydriver.sendvalues(device, APIdevice, value, 'onoff');
+		});		
 
 }
 
