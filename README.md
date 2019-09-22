@@ -3,6 +3,8 @@
 A implementation of [TuyAPI] (https://github.com/codetheweb/tuyapi/) for use with homey. 
 
 ## CHANGELOG
+* 1.0.5
+	- Fixed crash because dataobject was invalid / undefined. 
 * 1.0.4
 	- Optimized and centralized code.  
 	- Updated TuyAPI to version 5.1.3 
