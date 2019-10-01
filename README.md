@@ -3,6 +3,8 @@
 A implementation of [TuyAPI] (https://github.com/codetheweb/tuyapi/) for use with homey. 
 
 ## CHANGELOG
+* 1.0.6 
+	- Added support for LSC Smart Filement LED (action)
 * 1.0.5
 	- Fixed crash because dataobject was invalid / undefined. 
 * 1.0.4

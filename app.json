@@ -1,6 +1,6 @@
 {
   "id": "nl.rebtor.tuya",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "compatibility": ">=2.0.0",
   "sdk": 2,
   "name": {
@@ -81,6 +81,62 @@
       "images": {
         "large": "/drivers/LSC_Smart_Power_Plug/assets/images/large.png",
         "small": "/drivers/LSC_Smart_Power_Plug/assets/images/small.png"
+      }
+    },
+	{
+      "id": "LSC_Smart_Filament_LED",
+      "name": {
+		"nl": "LSC Smart Filament LED",
+        "en": "LSC Smart Filament LED" 
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+		"dim",
+		"light_temperature"
+      ],
+      "pair": [
+        {
+          "id": "pair"
+      }],
+   "settings": [
+                        {
+                            "type": "group",
+                            "label": {
+                                "en": "General settings",
+                                "nl": "Algemene instellingen"
+                            },
+                            "children": [
+                                {
+                                    "id": "ID",
+                                    "type": "text",
+                                    "value": "",
+                                    "label": {
+                                        "en": "ID",
+                                        "nl": "ID"
+                                    }
+                                },
+                                {
+                                    "id": "Key",
+                                    "type": "text",
+                                    "value": "",
+                                    "label": {
+                                        "en": "Key",
+                                        "nl": "Key"
+								}},									
+								{
+								"id": "IP",
+								"type": "text",
+								"value": "",
+								"label": {
+									"en": "IP",
+									"nl": "IP"
+								}
+                                }
+                              ]}],
+      "images": {
+        "large": "/drivers/LSC_Smart_Filament_LED/assets/images/large.png",
+        "small": "/drivers/LSC_Smart_Filament_LED/assets/images/small.png"
       }
     },
 	{
