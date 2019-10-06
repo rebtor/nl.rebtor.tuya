@@ -14,6 +14,7 @@ class TuyaDevice extends Homey.Device {
 onInit() {
 		Tuydriver.devicelog('Device: ','LSC SmartPlug has been inited');
 		Tuydriver.devicelog('Device name: ', this.getName());
+		Tuydriver.clearlog(this);
 		Tuyadevicedata(this)		
 	}	
 };

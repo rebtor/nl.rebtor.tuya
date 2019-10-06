@@ -3,6 +3,9 @@
 A implementation of [TuyAPI] (https://github.com/codetheweb/tuyapi/) for use with homey. 
 
 ## CHANGELOG
+* 1.0.7
+	- Fixed icon of LSC Smart Filement LED (action)
+	- Added logging for data atribute 
 * 1.0.6 
 	- Added support for LSC Smart Filement LED (action)
 * 1.0.5

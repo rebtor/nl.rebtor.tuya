@@ -1,6 +1,6 @@
 {
   "id": "nl.rebtor.tuya",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "compatibility": ">=2.0.0",
   "sdk": 2,
   "name": {
@@ -52,6 +52,14 @@
                             },
                             "children": [
                                 {
+                                    "id": "DATAATLOG",
+                                    "type": "textarea",
+                                    "value": "",
+                                    "label": {
+                                        "en": "Data atribute log",
+                                        "nl": "Data atribute log"
+								}},
+								{
                                     "id": "ID",
                                     "type": "text",
                                     "value": "",
@@ -108,6 +116,14 @@
                             },
                             "children": [
                                 {
+                                    "id": "DATAATLOG",
+                                    "type": "textarea",
+                                    "value": "",
+                                    "label": {
+                                        "en": "Data atribute log",
+                                        "nl": "Data atribute log"
+								}},
+								{
                                     "id": "ID",
                                     "type": "text",
                                     "value": "",
@@ -166,6 +182,14 @@
                             },
                             "children": [
                                 {
+                                    "id": "DATAATLOG",
+                                    "type": "textarea",
+                                    "value": "",
+                                    "label": {
+                                        "en": "Data atribute log",
+                                        "nl": "Data atribute log"
+								}},
+								{
                                     "id": "ID",
                                     "type": "text",
                                     "value": "",
@@ -220,6 +244,14 @@
                             },
                             "children": [
                                 {
+                                    "id": "DATAATLOG",
+                                    "type": "textarea",
+                                    "value": "",
+                                    "label": {
+                                        "en": "Data atribute log",
+                                        "nl": "Data atribute log"
+								}},
+								{
                                     "id": "ID",
                                     "type": "text",
                                     "value": "",
@@ -277,6 +309,14 @@
                             },
                             "children": [
                                 {
+                                    "id": "DATAATLOG",
+                                    "type": "textarea",
+                                    "value": "",
+                                    "label": {
+                                        "en": "Data atribute log",
+                                        "nl": "Data atribute log"
+								}},
+								{
                                     "id": "ID",
                                     "type": "text",
                                     "value": "",

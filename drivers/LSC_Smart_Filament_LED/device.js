@@ -14,7 +14,8 @@ onInit()
 		{
 			Tuydriver.devicelog('Device: ','LSC Smart Filament LED has been inited');
 			Tuydriver.devicelog('Device name:', this.getName());
-			Tuyadevicedata(this)		
+			Tuydriver.clearlog(this);
+			Tuyadevicedata(this)	
 		}	
 };
 

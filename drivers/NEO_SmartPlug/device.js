@@ -14,7 +14,8 @@ class TuyaDevice extends Homey.Device {
 onInit() {
 		Tuydriver.devicelog('Device: ','NEO SmartPlug has been inited');
 		Tuydriver.devicelog('Device name: ', this.getName());
-		Tuyadevicedata(this)		
+		Tuydriver.clearlog(this);
+		Tuyadevicedata(this)			
 	}	
 };
 

@@ -14,7 +14,8 @@ class TuyaDevice extends Homey.Device {
 onInit() {
 		Tuydriver.devicelog('Device: ','NEO Coolcam 3600w has been inited');
 		Tuydriver.devicelog('Device name: ', this.getName());
-		Tuyadevicedata(this)		
+		Tuydriver.clearlog(this);
+		Tuyadevicedata(this)			
 	}	
 };
 

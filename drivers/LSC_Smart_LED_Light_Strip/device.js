@@ -14,6 +14,7 @@ onInit()
 		{
 			Tuydriver.devicelog('Device: ','LSC Smart LED light strip has been inited');
 			Tuydriver.devicelog('Device name:', this.getName());
+			Tuydriver.clearlog(this);
 			Tuyadevicedata(this)		
 		}	
 };
