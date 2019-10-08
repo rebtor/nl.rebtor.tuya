@@ -3,6 +3,8 @@
 A implementation of [TuyAPI] (https://github.com/codetheweb/tuyapi/) for use with homey. 
 
 ## CHANGELOG
+* 1.0.8 
+	- Added support for AOFO WiFi Smart Power Strip
 * 1.0.7
 	- Fixed icon of LSC Smart Filement LED (action)
 	- Added logging for data atribute 

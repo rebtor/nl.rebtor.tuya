@@ -1,6 +1,6 @@
 {
   "id": "nl.rebtor.tuya",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "compatibility": ">=2.0.0",
   "sdk": 2,
   "name": {
@@ -283,6 +283,173 @@
         "small": "/drivers/NEO_SmartPlug/assets/images/small.png"
       }
     },
+	{
+      "id": "AOFO_WiFi_Smart_Power_Strip",
+      "name": {
+		"nl": "AOFO WiFi Smart Power Strip",
+        "en": "AOFO WiFi Smart Power Strip" 
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.soc1",
+        "onoff.soc2",
+        "onoff.soc3",
+        "onoff.soc4",
+        "onoff.socusb"		
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Switch all"
+          },
+          "greyout": false
+        },
+        "onoff.soc1": {
+          "title": {
+            "en": "Switch 1"
+          },
+          "greyout": false
+        },
+        "onoff.soc2": {
+          "title": {
+            "en": "Switch 2"
+          },
+          "greyout": false
+        },
+        "onoff.soc3": {
+          "title": {
+            "en": "Switch 3"
+          },
+          "greyout": false
+        },
+        "onoff.soc4": {
+          "title": {
+            "en": "Switch 4"
+          },
+          "greyout": false
+        },
+        "onoff.socusb": {
+          "title": {
+            "en": "Switch usb"
+          },
+          "greyout": false
+        }
+      },
+      "mobile": {
+        "components": [
+          {
+            "id": "icon",
+            "capabilities": []
+          },
+          {
+            "id": "toggle",
+            "capabilities": [
+              "onoff"
+            ],
+            "options": {
+              "showTitle": true
+            }
+          },
+          {
+            "id": "toggle",
+            "capabilities": [
+              "onoff.soc1"
+            ],
+            "options": {
+              "showTitle": true
+            }
+          },
+          {
+            "id": "toggle",
+            "capabilities": [
+              "onoff.soc2"
+            ],
+            "options": {
+              "showTitle": true
+            }
+          },
+          {
+            "id": "toggle",
+            "capabilities": [
+              "onoff.soc3"
+            ],
+            "options": {
+              "showTitle": true
+            }
+          },
+          {
+            "id": "toggle",
+            "capabilities": [
+              "onoff.soc4"
+            ],
+            "options": {
+              "showTitle": true
+            }
+          },
+          {
+            "id": "toggle",
+            "capabilities": [
+              "onoff.socusb"
+            ],
+            "options": {
+              "showTitle": true
+            }
+          }
+        ]
+      },	  
+      "pair": [
+        {
+          "id": "pair"
+      }],
+   "settings": [
+                        {
+                            "type": "group",
+                            "label": {
+                                "en": "General settings",
+                                "nl": "Algemene instellingen"
+                            },
+                            "children": [
+                                {
+                                    "id": "DATAATLOG",
+                                    "type": "textarea",
+                                    "value": "",
+                                    "label": {
+                                        "en": "Data atribute log",
+                                        "nl": "Data atribute log"
+								}},
+								{
+                                    "id": "ID",
+                                    "type": "text",
+                                    "value": "",
+                                    "label": {
+                                        "en": "ID",
+                                        "nl": "ID"
+                                    }
+                                },
+                                {
+                                    "id": "Key",
+                                    "type": "text",
+                                    "value": "",
+                                    "label": {
+                                        "en": "Key",
+                                        "nl": "Key"
+								}},									
+								{
+								"id": "IP",
+								"type": "text",
+								"value": "",
+								"label": {
+									"en": "IP",
+									"nl": "IP"
+								}
+                                }
+                              ]}],
+      "images": {
+        "large": "/drivers/AOFO_WiFi_Smart_Power_Strip/assets/images/large.png",
+        "small": "/drivers/AOFO_WiFi_Smart_Power_Strip/assets/images/small.png"
+      }
+    },	
 	{
       "id": "NEO_SmartPlug_3600",
       "name": {
