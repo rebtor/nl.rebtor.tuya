@@ -1,12 +1,441 @@
 {
   "id": "nl.rebtor.tuya",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "compatibility": ">=2.0.0",
   "sdk": 2,
   "name": {
     "en": "Tuya",
     "nl": "Tuya"
   },
+"flow": {
+  "triggers": [
+    {
+      "id": "Soc1_true",
+      "title": {
+        "en": "Socket 1 turned on",
+		"nl": "Socket 1 aangezet"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	  
+    },
+     {
+      "id": "Soc2_true",
+      "title": {
+        "en": "Socket 2 turned on",
+		"nl": "Socket 2 aangezet"
+      },
+		"args": [
+		  {
+			"type": "device",
+			"name": "device",
+			"filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+		  }
+		]	
+    },
+    {
+      "id": "Soc3_true",
+      "title": {
+        "en": "Socket 3 turned on",
+		"nl": "Socket 3 aangezet"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 	  
+    },
+    {
+      "id": "Soc4_true",
+      "title": {
+        "en": "Socket 4 turned on",
+		"nl": "Socket 4 aangezet"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Socusb_true",
+      "title": {
+        "en": "Socket usb turned on",
+		"nl": "Socket usb aangezet"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Soc1_off",
+      "title": {
+        "en": "Socket 1 turned off",
+		"nl": "Socket 1 uitgezet"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Soc2_off",
+      "title": {
+        "en": "Socket 2 turned off",
+		"nl": "Socket 2 uitgezet"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Soc3_off",
+      "title": {
+        "en": "Socket 3 turned off",
+		"nl": "Socket 3 uitgezet"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Soc4_off",
+      "title": {
+        "en": "Socket 4 turned off",
+		"nl": "Socket 4 uitgezet"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Socusb_off",
+      "title": {
+        "en": "Socket usb turned off",
+		"nl": "Socket usb uitgezet"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    }
+  ],
+  "conditions": [
+    {
+      "id": "Soc1_on",
+      "title": {
+          "en": "Socket 1 is turned !{{on|off}}",
+		  "nl": "Socket 1 is !{{aangezet|uitgezet}}"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Soc2_on",
+      "title": {
+          "en": "Socket 2 is turned !{{on|off}}",
+		  "nl": "Socket 2 is !{{aangezet|uitgezet}}"
+
+      },
+	        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Soc3_on",
+      "title": {
+          "en": "Socket 3 turned !{{on|off}}",
+		  "nl": "Socket 3 is !{{aangezet|uitgezet}}"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Soc4_on",
+      "title": {
+          "en": "Socket 4 turned !{{on|off}}",
+		  "nl": "Socket 4 is !{{aangezet|uitgezet}}"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Socusb_on",
+      "title": {
+          "en": "Socket usb turned !{{on|off}}",
+		  "nl": "Socket usb is !{{aangezet|uitgezet}}"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    }
+  ],
+  "actions": [
+    {
+      "id": "Soc1_ton",
+      "title": {
+        "en": "Turn socket 1 on",
+		"nl": "Zet socket 1 aan"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Soc2_ton",
+      "title": {
+        "en": "Turn socket 2 on",
+		"nl": "Zet socket 2 aan"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Soc3_ton",
+      "title": {
+        "en": "Turn socket 3 on",
+		"nl": "Zet socket 3 aan"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Soc4_ton",
+      "title": {
+        "en": "Turn socket 4 on",
+		"nl": "Zet socket 4 aan"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Socusb_ton",
+      "title": {
+        "en": "Turn socket usb on",
+		"nl": "Zet socket usb aan"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },	
+    {
+      "id": "Soc1_toff",
+      "title": {
+        "en": "Turn socket 1 off",
+		"nl": "Zet socket 1 uit"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Soc2_toff",
+      "title": {
+        "en": "Turn socket 2 off",
+		"nl": "Zet socket 2 uit"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Soc3_toff",
+      "title": {
+        "en": "Turn socket 3 off",
+		"nl": "Zet socket 3 uit"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Soc4_toff",
+      "title": {
+        "en": "Turn socket 4 off",
+		"nl": "Zet socket 4 uit"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Socusb_toff",
+      "title": {
+        "en": "Turn socket usb off",
+		"nl": "Zet socket usb uit"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Soc1_toggle",
+      "title": {
+        "en": "Toggle socket 1 on or off",
+		"nl": "Zet socket 1 aan of uit"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Soc2_toggle",
+      "title": {
+        "en": "Toggle socket 2 on or off",
+		"nl": "Zet socket 2 aan of uit"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Soc3_toggle",
+      "title": {
+        "en": "Toggle socket 3 on or off",
+		"nl": "Zet socket 3 aan of uit"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Soc4_toggle",
+      "title": {
+        "en": "Toggle socket 4 on or off",
+		"nl": "Zet socket 4 aan of uit"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    },
+    {
+      "id": "Socusb_toggle",
+      "title": {
+        "en": "Toggle socket usb on or off",
+		"nl": "Zet socket usb aan of uit"
+      },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]	 
+    }
+  ]
+},  
   "description": {
     "en": "Tuya devices",
     "nl": "Tuya devices"
@@ -397,8 +826,8 @@
             }
           }
         ]
-      },	  
-      "pair": [
+      }, 
+  "pair": [
         {
           "id": "pair"
       }],

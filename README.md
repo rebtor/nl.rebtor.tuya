@@ -3,6 +3,9 @@
 A implementation of [TuyAPI] (https://github.com/codetheweb/tuyapi/) for use with homey. 
 
 ## CHANGELOG
+* 1.0.9
+	-	Fixed small bug controlling socket 4 off AOFO_WiFi_Smart_Power_Strip
+	- 	Added flowcharts for individual sockets 1 t/m 4 and usb ports
 * 1.0.8 
 	- Added support for AOFO WiFi Smart Power Strip
 * 1.0.7
