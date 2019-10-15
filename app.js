@@ -3,12 +3,12 @@
 const Homey = require('homey');
 
 class Tuyadriver extends Homey.App {
-	
-	onInit() {
-		this.log('Tuyadriver is running...');
-		
-	}
-	
+
+    onInit() {
+        this.log('Tuyadriver is running...');
+
+    }
+
 }
 
 module.exports = Tuyadriver;
