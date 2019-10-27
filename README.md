@@ -3,6 +3,8 @@
 A implementation of [TuyAPI] (https://github.com/codetheweb/tuyapi/) for use with homey. 
 
 ## CHANGELOG
+* 1.1.2
+	- Beta
 * 1.1.1
 	- Added support for Anccy shutter timer switch (shutterdevice) 
 * 1.1.0
