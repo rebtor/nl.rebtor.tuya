@@ -3,8 +3,9 @@
 A implementation of [TuyAPI] (https://github.com/codetheweb/tuyapi/) for use with homey. 
 
 ## CHANGELOG
+
 * 1.1.2
-	- Beta
+	- Bugfixes for shutter switch
 * 1.1.1
 	- Added support for Anccy shutter timer switch (shutterdevice) 
 * 1.1.0
@@ -12,8 +13,8 @@ A implementation of [TuyAPI] (https://github.com/codetheweb/tuyapi/) for use wit
 	- Implemented energy property's
 	- Formatted the code
 * 1.0.9
-	-	Fixed small bug controlling socket 4 off AOFO_WiFi_Smart_Power_Strip
-	- 	Added flowcharts for individual sockets 1 t/m 4 and usb ports
+	- Fixed small bug controlling socket 4 off AOFO_WiFi_Smart_Power_Strip
+	- Added flowcharts for individual sockets 1 t/m 4 and usb ports
 * 1.0.8 
 	- Added support for AOFO WiFi Smart Power Strip
 * 1.0.7
