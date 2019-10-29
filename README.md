@@ -4,7 +4,9 @@ A implementation of [TuyAPI] (https://github.com/codetheweb/tuyapi/) for use wit
 
 ## CHANGELOG
 
-* 1.1.2
+* 1.1.3
+	- Bugfixes for shutter switch
+* 1.1.2 (Alpha version)
 	- Bugfixes for shutter switch
 * 1.1.1
 	- Added support for Anccy shutter timer switch (shutterdevice) 
