@@ -23,7 +23,8 @@ function Tuyadevicedata(device_data) {
     var APIdevice = new TuyAPI({
             id: device.getSetting('ID'),
             key: device.getSetting('Key'),
-            ip: device.getSetting('IP')
+            ip: device.getSetting('IP'),
+			version: device.getSetting('Version')
         });
 
     device.setUnavailable();

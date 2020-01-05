@@ -1,4 +1,4 @@
-﻿# Tuya devices homey app🌧 🔌
+# Tuya devices homey app
 
 A implementation of [TuyAPI] (https://github.com/codetheweb/tuyapi/) for use with homey. 
 
@@ -57,7 +57,7 @@ Once these parameters (ID and Key) are known you can use this information to cre
 
 Warning: This app is not plug and play finding the ID and Key needed tot communicate with the tuya cloud takes some doing. 
 
-## 📝 Notes
+## Notes
 - Only one TCP connection can be in use with a device at once. If using this, do not have the app on your phone open.
 - Some devices ship with older firmware that may not work with `tuyapi`.  If you're experiencing issues, please try updating the device's firmware in the official app.
 

@@ -1,6 +1,6 @@
 {
     "id": "nl.rebtor.tuya",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "compatibility": ">=2.0.0",
     "sdk": 2,
     "name": {
@@ -456,7 +456,16 @@
                                 "en": "IP",
                                 "nl": "IP"
                             }
+                        }, {
+                            "id": "Version",
+                            "type": "number",
+                            "value": 3.1,
+                            "label": {
+                                "en": "Version",
+                                "nl": "Version"
+                            }
                         }
+						
                     ]
                 }
             ],
@@ -524,7 +533,16 @@
                                 "en": "IP",
                                 "nl": "IP"
                             }
+                        }, {
+                            "id": "Version",
+                            "type": "number",
+                            "value": 3.1,
+                            "label": {
+                                "en": "Version",
+                                "nl": "Version"
+                            }
                         }
+						
                     ]
                 }
             ],
@@ -594,7 +612,16 @@
                                 "en": "IP",
                                 "nl": "IP"
                             }
+                        }, {
+                            "id": "Version",
+                            "type": "number",
+                            "value": 3.1,
+                            "label": {
+                                "en": "Version",
+                                "nl": "Version"
+                            }
                         }
+						
                     ]
                 }
             ],
@@ -654,7 +681,16 @@
                                 "en": "IP",
                                 "nl": "IP"
                             }
+                        }, {
+                            "id": "Version",
+                            "type": "number",
+                            "value": 3.1,
+                            "label": {
+                                "en": "Version",
+                                "nl": "Version"
+                            }
                         }
+						
                     ]
                 }
             ],
@@ -720,7 +756,16 @@
                                 "en": "IP",
                                 "nl": "IP"
                             }
+                        }, {
+                            "id": "Version",
+                            "type": "number",
+                            "value": 3.1,
+                            "label": {
+                                "en": "Version",
+                                "nl": "Version"
+                            }
                         }
+						
                     ]
                 }
             ],
@@ -887,7 +932,16 @@
                                 "en": "IP",
                                 "nl": "IP"
                             }
+                        }, {
+                            "id": "Version",
+                            "type": "number",
+                            "value": 3.1,
+                            "label": {
+                                "en": "Version",
+                                "nl": "Version"
+                            }
                         }
+						
                     ]
                 }
             ],
@@ -950,7 +1004,16 @@
                                 "en": "IP",
                                 "nl": "IP"
                             }
+                        }, {
+                            "id": "Version",
+                            "type": "number",
+                            "value": 3.1,
+                            "label": {
+                                "en": "Version",
+                                "nl": "Version"
+                            }
                         }
+						
                     ]
                 }
             ],
