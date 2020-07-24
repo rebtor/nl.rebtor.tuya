@@ -23,7 +23,7 @@ function configure() {
 		var IP 			= $("#IP").val();
 		var ID 			= $("#ID").val();
 		var Key 		= $("#Key").val();
-		var Version 		= $("#Version").val();		
+		var Version 	= $("#Version").val();		
 		
 		if (Key.length !== 16) {
 			Homey.alert(__('pair.keylength'), 'error');
@@ -88,6 +88,8 @@ function configure() {
 	<label for="ID"></label>
     <input type="text" ID="ID"></input>
 
+	<label for="Version"></label>
+    <input type="text" ID="Version"></input>
   </span>
 </p>
 <button class="button" ID="authentication_button" onclick="configure();" data-i18n="pair.authorization.start_configuration" />

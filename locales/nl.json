@@ -12,6 +12,7 @@
        "name": "naam",
        "ID": "ID",
 	   "IP": "IP",
+	   "Version": "Protocol versie (default 3.1)",
 	   "Key": "Key"}
   }
 }

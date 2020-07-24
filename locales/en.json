@@ -11,6 +11,7 @@
     "configuration": {
        "name": "Name",
        "ID": "ID",
-	   "Key": "Key"}
+	   "Key": "Key",
+	   "Version": "Protocol Version (3.1 default)"}
   }
 }

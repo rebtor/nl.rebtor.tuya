@@ -48,6 +48,6 @@
     "en": "Formatted readme to athom specifications\t"
   },
   "1.1.6": {
-    "en": "releasenote change and added old notes to change json\t"
+    "en": "releasenote change and added old notes to change json, it is also possible to specify protocol version at installation\t"
   }
 }

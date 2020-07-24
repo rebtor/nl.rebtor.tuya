@@ -3,7 +3,8 @@
 A implementation of [TuyAPI] (https://github.com/codetheweb/tuyapi/) for use with homey. 
 
 ## CHANGELOG
-
+* 1.1.6
+	- It is now possible the specify version during pairing (default remains 3.1)	
 * 1.1.4 
 	- It is now possible to specify what version of the tuya protocol you want to use (default remains 3.1)	
 * 1.1.3
