@@ -16,14 +16,14 @@
   $("label[for='IP']").text(__('pair.configuration.IP') + ':');
   $("label[for='ID']").text(__('pair.configuration.ID') + ':');
   $("label[for='Key']").text(__('pair.configuration.Key') + ':');
- 
+  $("label[for='Version']").text(__('pair.configuration.Version') + ':');
 function configure() {
 		//variables
 		var name 		= $("#name").val();
 		var IP 			= $("#IP").val();
 		var ID 			= $("#ID").val();
 		var Key 		= $("#Key").val();
-		
+		var Version 		= $("#Version").val();		
 		
 		if (Key.length !== 16) {
 			Homey.alert(__('pair.keylength'), 'error');
@@ -35,6 +35,7 @@ function configure() {
 				IP: IP,
 				ID: ID,
 				Key: Key,
+				Version: Version,
 			};
 		
 			// Continue to back-end, pass along data
@@ -54,6 +55,7 @@ function configure() {
 					IP: IP,
 					ID: ID,
 					Key: Key,
+					Version: Version,
 				}
 				};				
 				Homey.addDevice(device, function( err, result ){
