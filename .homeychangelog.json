@@ -25,7 +25,7 @@
   },
   "1.0.8": {
     "en": "Added support for AOFO WiFi Smart Power Strip\t"
-  },  
+  },
   "1.0.9": {
     "en": "Fixed small bug controlling socket 4 off AOFOWiFiSmartPowerStrip & Added flowcharts for individual sockets 1 t/m 4 and usb ports\t"
   },
@@ -51,6 +51,9 @@
     "en": "Internal technical release\t"
   },
   "2.0.0": {
-	"en": "SDK 3 and Homey 5.0.0 support\t"
+    "en": "SDK 3 and Homey 5.0.0 support\t"
+  },
+  "2.0.1": {
+    "en": "Updated TuyApi libery"
   }
 }
