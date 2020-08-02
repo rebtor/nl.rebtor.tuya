@@ -279,7 +279,7 @@ class TuyaDevice extends EventEmitter {
         // Default connect timeout is ~1 minute,
         // 5 seconds is a more reasonable default
         // since `retry` is used.
-        this.client.setTimeout(this._connectTimeout * 1000, () => {
+		this.client.setTimeout(this._connectTimeout * 1000, () => {
           /**
            * Emitted on socket error, usually a
            * result of a connection timeout.

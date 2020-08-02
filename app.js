@@ -2,6 +2,7 @@
 
 const Homey = require('homey');
 
+
 class Tuyadriver extends Homey.App {
 
     onInit() {

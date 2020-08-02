@@ -2,8 +2,8 @@
 
 //constanten
 const Homey = require('homey');
-const TuyAPI = require('tuyapi');
-const Tuydriver = require('tuydriver');
+const Tuydriver = require('/modules/tuydriver/index.js');
+const TuyAPI = require('/modules/tuyapi/index.js');
 
 var device = {};
 
