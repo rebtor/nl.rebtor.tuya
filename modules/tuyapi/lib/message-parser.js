@@ -182,7 +182,7 @@ class MessageParser {
       }
 
       data = this.cipher.decrypt(data);
-    } catch (error) {
+    } catch (_) {
       data = data.toString('utf8');
     }
 
@@ -191,7 +191,7 @@ class MessageParser {
     if (typeof data === 'string') {
       try {
         data = JSON.parse(data);
-      } catch (error) { }
+      } catch (_) { }
     }
 
     return data;
@@ -247,7 +247,7 @@ class MessageParser {
    */
   encode(options) {
     // Check command byte
-    if (Object.values(CommandType).indexOf(options.commandByte) === -1) {
+    if (!Object.values(CommandType).includes(options.commandByte)) {
       throw new TypeError('Command byte not defined.');
     }
 
@@ -309,7 +309,9 @@ class MessageParser {
 
     // Add payload, crc, and suffix
     payload.copy(buffer, 16);
-    buffer.writeInt32BE(crc(buffer.slice(0, payload.length + 16)), payload.length + 16);
+    const calculatedCrc = crc(buffer.slice(0, payload.length + 16)) & 0xFFFFFFFF;
+
+    buffer.writeInt32BE(calculatedCrc, payload.length + 16);
     buffer.writeUInt32BE(0x0000AA55, payload.length + 20);
 
     return buffer;

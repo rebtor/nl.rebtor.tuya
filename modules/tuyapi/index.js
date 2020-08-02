@@ -93,7 +93,10 @@ class TuyaDevice extends EventEmitter {
   get(options = {}) {
     const payload = {
       gwId: this.device.gwID,
-      devId: this.device.id
+      devId: this.device.id,
+      t: Math.round(new Date().getTime() / 1000).toString(),
+      dps: {},
+      uid: this.device.id
     };
 
     debug('GET Payload:');
@@ -110,7 +113,7 @@ class TuyaDevice extends EventEmitter {
     return new Promise((resolve, reject) => {
       try {
         // Send request
-        this._send(buffer).then(data => {
+        this._send(buffer).then(async data => {
           if (typeof data !== 'object' || options.schema === true) {
             // Return whole response
             resolve(data);
@@ -150,6 +153,13 @@ class TuyaDevice extends EventEmitter {
    *             '1': true,
    *             '2': 'white'
    *          }}).then(() => console.log('device was changed'))
+   * @example
+   * // set custom property for a specific (virtual) deviceId
+   * tuya.set({
+   *           dps: 2,
+   *           set: false,
+   *           devId: '04314116cc50e346566e'
+   *          }).then(() => console.log('device was turned off'))
    * @returns {Promise<Object>} - returns response from device
    */
   set(options) {
@@ -178,7 +188,7 @@ class TuyaDevice extends EventEmitter {
 
     // Construct payload
     const payload = {
-      devId: this.device.id,
+      devId: options.devId || this.device.id,
       gwId: this.device.gwID,
       uid: '',
       t: timeStamp,
@@ -279,7 +289,7 @@ class TuyaDevice extends EventEmitter {
         // Default connect timeout is ~1 minute,
         // 5 seconds is a more reasonable default
         // since `retry` is used.
-		this.client.setTimeout(this._connectTimeout * 1000, () => {
+        this.client.setTimeout(this._connectTimeout * 1000, () => {
           /**
            * Emitted on socket error, usually a
            * result of a connection timeout.
@@ -302,6 +312,23 @@ class TuyaDevice extends EventEmitter {
 
           try {
             packets = this.device.parser.parse(data);
+
+            for (const packet of packets) {
+              if (packet.payload && packet.payload === 'json obj data unvalid') {
+                this.emit('error', packet.payload);
+
+                packet.payload = {
+                  dps: {
+                    1: null,
+                    2: null,
+                    3: null,
+                    101: null,
+                    102: null,
+                    103: null
+                  }
+                };
+              }
+            }
           } catch (error) {
             debug(error);
             this.emit('error', error);
@@ -373,7 +400,7 @@ class TuyaDevice extends EventEmitter {
 
           // Automatically ask for current state so we
           // can emit a `data` event as soon as possible
-          await this.get();
+          this.get();
 
           // Return
           resolve(true);
@@ -391,6 +418,11 @@ class TuyaDevice extends EventEmitter {
 
     if (packet.commandByte === CommandType.HEART_BEAT) {
       debug(`Pong from ${this.device.ip}`);
+      /**
+       * Emitted when a heartbeat ping is returned.
+       * @event TuyaDevice#heartbeat
+       */
+      this.emit('heartbeat');
       return;
     }
 
