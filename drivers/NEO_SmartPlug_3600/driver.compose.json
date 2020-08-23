@@ -1,0 +1,79 @@
+{
+  "id": "NEO_SmartPlug_3600",
+  "name": {
+	"nl": "NEO SmartPlug 3600W",
+	"en": "NEO SmartPlug 3600W"
+  },
+  "class": "socket",
+  "capabilities": [
+	"onoff",
+	"measure_power",
+	"measure_voltage",
+	"measure_current"
+  ],
+  "pair": [
+	{
+	  "id": "pair"
+	}
+  ],
+  "settings": [
+	{
+	  "type": "group",
+	  "label": {
+		"en": "General settings",
+		"nl": "Algemene instellingen"
+	  },
+	  "children": [
+		{
+		  "id": "DATAATLOG",
+		  "type": "textarea",
+		  "value": "",
+		  "label": {
+			"en": "Data atribute log",
+			"nl": "Data atribute log"
+		  }
+		},
+		{
+		  "id": "ID",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "ID",
+			"nl": "ID"
+		  }
+		},
+		{
+		  "id": "Key",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "Key",
+			"nl": "Key"
+		  }
+		},
+		{
+		  "id": "IP",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "IP",
+			"nl": "IP"
+		  }
+		},
+		{
+		  "id": "Version",
+		  "type": "number",
+		  "value": 3.1,
+		  "label": {
+			"en": "Version",
+			"nl": "Version"
+		  }
+		}
+	  ]
+	}
+  ],
+  "images": {
+	"large": "/drivers/NEO_SmartPlug_3600/assets/images/large.png",
+	"small": "/drivers/NEO_SmartPlug_3600/assets/images/small.png"
+  }
+}

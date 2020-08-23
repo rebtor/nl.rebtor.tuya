@@ -55,5 +55,8 @@
   },
   "2.0.1": {
     "en": "Updated TuyApi libery"
+  },
+  "2.0.2": {
+    "en": "Fix on / off ledstrip and usage of homey composer"
   }
 }

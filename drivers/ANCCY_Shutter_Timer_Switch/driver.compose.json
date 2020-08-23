@@ -1,0 +1,76 @@
+{
+  "id": "ANCCY_Shutter_Timer_Switch",
+  "name": {
+	"nl": "ANCCY Shutter Timer Switch",
+	"en": "ANCCY Shutter Timer Switch"
+  },
+  "class": "curtain",
+  "capabilities": [
+	"windowcoverings_state"
+  ],
+  "pair": [
+	{
+	  "id": "pair"
+	}
+  ],
+  "settings": [
+	{
+	  "type": "group",
+	  "label": {
+		"en": "General settings",
+		"nl": "Algemene instellingen"
+	  },
+	  "children": [
+		{
+		  "id": "DATAATLOG",
+		  "type": "textarea",
+		  "value": "",
+		  "label": {
+			"en": "Data atribute log",
+			"nl": "Data atribute log"
+		  }
+		},
+		{
+		  "id": "ID",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "ID",
+			"nl": "ID"
+		  }
+		},
+		{
+		  "id": "Key",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "Key",
+			"nl": "Key"
+		  }
+		},
+		{
+		  "id": "IP",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "IP",
+			"nl": "IP"
+		  }
+		},
+		{
+		  "id": "Version",
+		  "type": "number",
+		  "value": 3.1,
+		  "label": {
+			"en": "Version",
+			"nl": "Version"
+		  }
+		}
+	  ]
+	}
+  ],
+  "images": {
+	"large": "/drivers/ANCCY_Shutter_Timer_Switch/assets/images/large.png",
+	"small": "/drivers/ANCCY_Shutter_Timer_Switch/assets/images/small.png"
+  }
+}

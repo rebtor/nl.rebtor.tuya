@@ -51,7 +51,7 @@ function Tuyadevicedata(device_data) {
     });
 
     device.registerCapabilityListener('onoff', async(value) => {
-        Tuydriver.sendvalues(device, APIdevice, value, 'onoff');
+        Tuydriver.sendvalues(device, APIdevice, value, 'onoff.strip');
     });
 
     device.registerCapabilityListener('dim', async(value) => {

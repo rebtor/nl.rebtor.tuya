@@ -1,6 +1,6 @@
 {
   "id": "nl.rebtor.tuya",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "sdk": 3,
   "compatibility": ">=5.0.0",
   "name": {

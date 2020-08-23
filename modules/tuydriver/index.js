@@ -340,7 +340,15 @@ module.exports = {
             .catch(err => {
                 console.error(err);
             });
-        } else if (parameter == 'light_temperature') {
+		} else if (parameter == 'onoff.strip') {
+            return APIdevice.set({
+                dps: 20,
+				set: value
+            })
+		.catch(err => {
+			console.error(err);
+		});
+       } else if (parameter == 'light_temperature') {
             var tempvalue = Math.round(255 - (value * 255));
             this.devicelog('Device: temp to ', tempvalue);
             return APIdevice.set({

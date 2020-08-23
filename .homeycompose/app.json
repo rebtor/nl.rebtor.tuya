@@ -1,0 +1,33 @@
+{
+  "id": "nl.rebtor.tuya",
+  "name": {
+    "en": "Tuya",
+    "nl": "Tuya"
+  },
+  "description": {
+    "en": "A Tuyapi implementation for homey",
+    "nl": "Een Tuyapi implementatie voor homey"
+  },  
+  "category": [
+    "lights"
+  ],  
+  "version": "2.0.1",
+  "compatibility": ">=5.0.0",
+  "homeyCommunityTopicId": 15811, 
+  "sdk": 3,
+  "author": {
+    "name": "Rens Brandwijk",
+    "email": "rebtor@gmail.com"
+  },
+   "contributing": {
+   "donate": {
+   "paypal": {
+        "username": "rebtor"
+      }
+    }
+  },
+	"images": {
+        "large": "/drivers/NEO_SmartPlug_3600/assets/images/large.png",
+        "small": "/drivers/NEO_SmartPlug_3600/assets/images/small.png"
+      }
+}

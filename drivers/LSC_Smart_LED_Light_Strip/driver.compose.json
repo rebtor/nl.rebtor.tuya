@@ -1,0 +1,82 @@
+{
+  "id": "LSC_Smart_Power_Plug",
+  "name": {
+	"nl": "LSC Smart Power Plug",
+	"en": "LSC Smart Power Plug"
+  },
+  "class": "socket",
+  "capabilities": [
+	"onoff"
+  ],
+  "energy": {
+	"approximation": {
+	  "usageOn": 0.5,
+	  "usageOff": 0.5
+	}
+  },
+  "pair": [
+	{
+	  "id": "pair"
+	}
+  ],
+  "settings": [
+	{
+	  "type": "group",
+	  "label": {
+		"en": "General settings",
+		"nl": "Algemene instellingen"
+	  },
+	  "children": [
+		{
+		  "id": "DATAATLOG",
+		  "type": "textarea",
+		  "value": "",
+		  "label": {
+			"en": "Data atribute log",
+			"nl": "Data atribute log"
+		  }
+		},
+		{
+		  "id": "ID",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "ID",
+			"nl": "ID"
+		  }
+		},
+		{
+		  "id": "Key",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "Key",
+			"nl": "Key"
+		  }
+		},
+		{
+		  "id": "IP",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "IP",
+			"nl": "IP"
+		  }
+		},
+		{
+		  "id": "Version",
+		  "type": "number",
+		  "value": 3.1,
+		  "label": {
+			"en": "Version",
+			"nl": "Version"
+		  }
+		}
+	  ]
+	}
+  ],
+  "images": {
+	"large": "/drivers/LSC_Smart_Power_Plug/assets/images/large.png",
+	"small": "/drivers/LSC_Smart_Power_Plug/assets/images/small.png"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "id": "LSC_Smart_LED_Light_Strip",
+  "name": {
+	"nl": "LSC Smart LED Light Strip",
+	"en": "LSC Smart LED Light Strip"
+  },
+  "class": "light",
+  "capabilities": [
+	"onoff",
+	"dim",
+	"light_hue",
+	"light_saturation",
+	"light_mode"
+  ],
+  "energy": {
+	"approximation": {
+	  "usageOn": 22.5,
+	  "usageOff": 0.5
+	}
+  },
+  "pair": [
+	{
+	  "id": "pair"
+	}
+  ],
+  "settings": [
+	{
+	  "type": "group",
+	  "label": {
+		"en": "General settings",
+		"nl": "Algemene instellingen"
+	  },
+	  "children": [
+		{
+		  "id": "DATAATLOG",
+		  "type": "textarea",
+		  "value": "",
+		  "label": {
+			"en": "Data atribute log",
+			"nl": "Data atribute log"
+		  }
+		},
+		{
+		  "id": "ID",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "ID",
+			"nl": "ID"
+		  }
+		},
+		{
+		  "id": "Key",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "Key",
+			"nl": "Key"
+		  }
+		},
+		{
+		  "id": "IP",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "IP",
+			"nl": "IP"
+		  }
+		},
+		{
+		  "id": "Version",
+		  "type": "number",
+		  "value": 3.1,
+		  "label": {
+			"en": "Version",
+			"nl": "Version"
+		  }
+		}
+	  ]
+	}
+  ],
+  "images": {
+	"large": "/drivers/LSC_Smart_LED_Light_Strip/assets/images/large.png",
+	"small": "/drivers/LSC_Smart_LED_Light_Strip/assets/images/small.png"
+  }
+}
