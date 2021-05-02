@@ -1,0 +1,14 @@
+{
+"id": "Soc3_off",
+"title": {
+  "en": "Socket 3 turned off",
+  "nl": "Socket 3 uitgezet"
+},
+"args": [
+  {
+	"type": "device",
+	"name": "device",
+	"filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+  }
+]
+}

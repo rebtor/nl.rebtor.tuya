@@ -1,20 +1,16 @@
 {
-  "id": "LSC_Smart_LED_Light_Strip",
+  "id": "LSC_Smart_Power_Plug",
   "name": {
-	"nl": "LSC Smart LED Light Strip",
-	"en": "LSC Smart LED Light Strip"
+	"nl": "LSC Smart Power Plug",
+	"en": "LSC Smart Power Plug"
   },
-  "class": "light",
+  "class": "socket",
   "capabilities": [
-	"onoff",
-	"dim",
-	"light_hue",
-	"light_saturation",
-	"light_mode"
+	"onoff"
   ],
   "energy": {
 	"approximation": {
-	  "usageOn": 22.5,
+	  "usageOn": 0.5,
 	  "usageOff": 0.5
 	}
   },
@@ -80,7 +76,7 @@
 	}
   ],
   "images": {
-	"large": "/drivers/LSC_Smart_LED_Light_Strip/assets/images/large.png",
-	"small": "/drivers/LSC_Smart_LED_Light_Strip/assets/images/small.png"
+	"large": "/drivers/LSC_Smart_Power_Plug/assets/images/large.png",
+	"small": "/drivers/LSC_Smart_Power_Plug/assets/images/small.png"
   }
 }

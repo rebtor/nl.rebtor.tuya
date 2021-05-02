@@ -1,89 +1,56 @@
 {
   "id": "nl.rebtor.tuya",
-  "version": "2.0.2",
-  "sdk": 3,
-  "compatibility": ">=5.0.0",
   "name": {
     "en": "Tuya",
     "nl": "Tuya"
   },
+  "description": {
+    "en": "A Tuyapi implementation for homey",
+    "nl": "Een Tuyapi implementatie voor homey"
+  },
+  "category": [
+    "lights"
+  ],
+  "version": "2.1.3",
+  "compatibility": ">=5.0.0",
+  "homeyCommunityTopicId": 15811,
+  "sdk": 3,
+  "author": {
+    "name": "Rens Brandwijk",
+    "email": "rebtor@gmail.com"
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "rebtor"
+      }
+    }
+  },
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
   "flow": {
     "triggers": [
-      {
-        "id": "Soc1_true",
-        "title": {
-          "en": "Socket 1 turned on",
-          "nl": "Socket 1 aangezet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
-          }
-        ]
-      },
-      {
-        "id": "Soc2_true",
-        "title": {
-          "en": "Socket 2 turned on",
-          "nl": "Socket 2 aangezet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
-          }
-        ]
-      },
-      {
-        "id": "Soc3_true",
-        "title": {
-          "en": "Socket 3 turned on",
-          "nl": "Socket 3 aangezet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
-          }
-        ]
-      },
-      {
-        "id": "Soc4_true",
-        "title": {
-          "en": "Socket 4 turned on",
-          "nl": "Socket 4 aangezet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
-          }
-        ]
-      },
-      {
-        "id": "Socusb_true",
-        "title": {
-          "en": "Socket usb turned on",
-          "nl": "Socket usb aangezet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
-          }
-        ]
-      },
       {
         "id": "Soc1_off",
         "title": {
           "en": "Socket 1 turned off",
           "nl": "Socket 1 uitgezet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
+      },
+      {
+        "id": "Soc1_true",
+        "title": {
+          "en": "Socket 1 turned on",
+          "nl": "Socket 1 aangezet"
         },
         "args": [
           {
@@ -108,10 +75,38 @@
         ]
       },
       {
+        "id": "Soc2_true",
+        "title": {
+          "en": "Socket 2 turned on",
+          "nl": "Socket 2 aangezet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
+      },
+      {
         "id": "Soc3_off",
         "title": {
           "en": "Socket 3 turned off",
           "nl": "Socket 3 uitgezet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
+      },
+      {
+        "id": "Soc3_true",
+        "title": {
+          "en": "Socket 3 turned on",
+          "nl": "Socket 3 aangezet"
         },
         "args": [
           {
@@ -136,10 +131,38 @@
         ]
       },
       {
+        "id": "Soc4_true",
+        "title": {
+          "en": "Socket 4 turned on",
+          "nl": "Socket 4 aangezet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
+      },
+      {
         "id": "Socusb_off",
         "title": {
           "en": "Socket usb turned off",
           "nl": "Socket usb uitgezet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
+      },
+      {
+        "id": "Socusb_true",
+        "title": {
+          "en": "Socket usb turned on",
+          "nl": "Socket usb aangezet"
         },
         "args": [
           {
@@ -224,136 +247,10 @@
     ],
     "actions": [
       {
-        "id": "Soc1_ton",
-        "title": {
-          "en": "Turn socket 1 on",
-          "nl": "Zet socket 1 aan"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
-          }
-        ]
-      },
-      {
-        "id": "Soc2_ton",
-        "title": {
-          "en": "Turn socket 2 on",
-          "nl": "Zet socket 2 aan"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
-          }
-        ]
-      },
-      {
-        "id": "Soc3_ton",
-        "title": {
-          "en": "Turn socket 3 on",
-          "nl": "Zet socket 3 aan"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
-          }
-        ]
-      },
-      {
-        "id": "Soc4_ton",
-        "title": {
-          "en": "Turn socket 4 on",
-          "nl": "Zet socket 4 aan"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
-          }
-        ]
-      },
-      {
-        "id": "Socusb_ton",
-        "title": {
-          "en": "Turn socket usb on",
-          "nl": "Zet socket usb aan"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
-          }
-        ]
-      },
-      {
         "id": "Soc1_toff",
         "title": {
           "en": "Turn socket 1 off",
           "nl": "Zet socket 1 uit"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
-          }
-        ]
-      },
-      {
-        "id": "Soc2_toff",
-        "title": {
-          "en": "Turn socket 2 off",
-          "nl": "Zet socket 2 uit"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
-          }
-        ]
-      },
-      {
-        "id": "Soc3_toff",
-        "title": {
-          "en": "Turn socket 3 off",
-          "nl": "Zet socket 3 uit"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
-          }
-        ]
-      },
-      {
-        "id": "Soc4_toff",
-        "title": {
-          "en": "Turn socket 4 off",
-          "nl": "Zet socket 4 uit"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
-          }
-        ]
-      },
-      {
-        "id": "Socusb_toff",
-        "title": {
-          "en": "Turn socket usb off",
-          "nl": "Zet socket usb uit"
         },
         "args": [
           {
@@ -378,10 +275,66 @@
         ]
       },
       {
+        "id": "Soc1_ton",
+        "title": {
+          "en": "Turn socket 1 on",
+          "nl": "Zet socket 1 aan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
+      },
+      {
+        "id": "Soc2_toff",
+        "title": {
+          "en": "Turn socket 2 off",
+          "nl": "Zet socket 2 uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
+      },
+      {
         "id": "Soc2_toggle",
         "title": {
           "en": "Toggle socket 2 on or off",
           "nl": "Zet socket 2 aan of uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
+      },
+      {
+        "id": "Soc2_ton",
+        "title": {
+          "en": "Turn socket 2 on",
+          "nl": "Zet socket 2 aan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
+      },
+      {
+        "id": "Soc3_toff",
+        "title": {
+          "en": "Turn socket 3 off",
+          "nl": "Zet socket 3 uit"
         },
         "args": [
           {
@@ -406,10 +359,66 @@
         ]
       },
       {
+        "id": "Soc3_ton",
+        "title": {
+          "en": "Turn socket 3 on",
+          "nl": "Zet socket 3 aan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
+      },
+      {
+        "id": "Soc4_toff",
+        "title": {
+          "en": "Turn socket 4 off",
+          "nl": "Zet socket 4 uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
+      },
+      {
         "id": "Soc4_toggle",
         "title": {
           "en": "Toggle socket 4 on or off",
           "nl": "Zet socket 4 aan of uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
+      },
+      {
+        "id": "Soc4_ton",
+        "title": {
+          "en": "Turn socket 4 on",
+          "nl": "Zet socket 4 aan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
+      },
+      {
+        "id": "Socusb_toff",
+        "title": {
+          "en": "Turn socket usb off",
+          "nl": "Zet socket usb uit"
         },
         "args": [
           {
@@ -432,280 +441,24 @@
             "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
           }
         ]
+      },
+      {
+        "id": "Socusb_ton",
+        "title": {
+          "en": "Turn socket usb on",
+          "nl": "Zet socket usb aan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
       }
     ]
   },
-  "description": {
-    "en": "Tuya devices",
-    "nl": "Tuya devices"
-  },
-  "category": [
-    "lights",
-    "appliances"
-  ],
-  "homeyCommunityTopicId": 15811,
-  "author": {
-    "name": "Rens Brandwijk",
-    "email": "rebtor@rebtor.nl"
-  },
-  "permissions": [],
-  "images": {
-    "large": "/assets/images/large.png",
-    "small": "/assets/images/small.png"
-  },
   "drivers": [
-    {
-      "id": "LSC_Smart_Power_Plug",
-      "name": {
-        "nl": "LSC Smart Power Plug",
-        "en": "LSC Smart Power Plug"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "energy": {
-        "approximation": {
-          "usageOn": 0.5,
-          "usageOff": 0.5
-        }
-      },
-      "pair": [
-        {
-          "id": "pair"
-        }
-      ],
-      "settings": [
-        {
-          "type": "group",
-          "label": {
-            "en": "General settings",
-            "nl": "Algemene instellingen"
-          },
-          "children": [
-            {
-              "id": "DATAATLOG",
-              "type": "textarea",
-              "value": "",
-              "label": {
-                "en": "Data atribute log",
-                "nl": "Data atribute log"
-              }
-            },
-            {
-              "id": "ID",
-              "type": "text",
-              "value": "",
-              "label": {
-                "en": "ID",
-                "nl": "ID"
-              }
-            },
-            {
-              "id": "Key",
-              "type": "text",
-              "value": "",
-              "label": {
-                "en": "Key",
-                "nl": "Key"
-              }
-            },
-            {
-              "id": "IP",
-              "type": "text",
-              "value": "",
-              "label": {
-                "en": "IP",
-                "nl": "IP"
-              }
-            },
-            {
-              "id": "Version",
-              "type": "number",
-              "value": 3.1,
-              "label": {
-                "en": "Version",
-                "nl": "Version"
-              }
-            }
-          ]
-        }
-      ],
-      "images": {
-        "large": "/drivers/LSC_Smart_Power_Plug/assets/images/large.png",
-        "small": "/drivers/LSC_Smart_Power_Plug/assets/images/small.png"
-      }
-    },
-    {
-      "id": "LSC_Smart_Filament_LED",
-      "name": {
-        "nl": "LSC Smart Filament LED",
-        "en": "LSC Smart Filament LED"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim",
-        "light_temperature"
-      ],
-      "energy": {
-        "approximation": {
-          "usageOn": 6,
-          "usageOff": 0.5
-        }
-      },
-      "pair": [
-        {
-          "id": "pair"
-        }
-      ],
-      "settings": [
-        {
-          "type": "group",
-          "label": {
-            "en": "General settings",
-            "nl": "Algemene instellingen"
-          },
-          "children": [
-            {
-              "id": "DATAATLOG",
-              "type": "textarea",
-              "value": "",
-              "label": {
-                "en": "Data atribute log",
-                "nl": "Data atribute log"
-              }
-            },
-            {
-              "id": "ID",
-              "type": "text",
-              "value": "",
-              "label": {
-                "en": "ID",
-                "nl": "ID"
-              }
-            },
-            {
-              "id": "Key",
-              "type": "text",
-              "value": "",
-              "label": {
-                "en": "Key",
-                "nl": "Key"
-              }
-            },
-            {
-              "id": "IP",
-              "type": "text",
-              "value": "",
-              "label": {
-                "en": "IP",
-                "nl": "IP"
-              }
-            },
-            {
-              "id": "Version",
-              "type": "number",
-              "value": 3.1,
-              "label": {
-                "en": "Version",
-                "nl": "Version"
-              }
-            }
-          ]
-        }
-      ],
-      "images": {
-        "large": "/drivers/LSC_Smart_Filament_LED/assets/images/large.png",
-        "small": "/drivers/LSC_Smart_Filament_LED/assets/images/small.png"
-      }
-    },
-    {
-      "id": "LSC_Smart_LED_Light_Strip",
-      "name": {
-        "nl": "LSC Smart LED Light Strip",
-        "en": "LSC Smart LED Light Strip"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim",
-        "light_hue",
-        "light_saturation",
-        "light_mode"
-      ],
-      "energy": {
-        "approximation": {
-          "usageOn": 22.5,
-          "usageOff": 0.5
-        }
-      },
-      "pair": [
-        {
-          "id": "pair"
-        }
-      ],
-      "settings": [
-        {
-          "type": "group",
-          "label": {
-            "en": "General settings",
-            "nl": "Algemene instellingen"
-          },
-          "children": [
-            {
-              "id": "DATAATLOG",
-              "type": "textarea",
-              "value": "",
-              "label": {
-                "en": "Data atribute log",
-                "nl": "Data atribute log"
-              }
-            },
-            {
-              "id": "ID",
-              "type": "text",
-              "value": "",
-              "label": {
-                "en": "ID",
-                "nl": "ID"
-              }
-            },
-            {
-              "id": "Key",
-              "type": "text",
-              "value": "",
-              "label": {
-                "en": "Key",
-                "nl": "Key"
-              }
-            },
-            {
-              "id": "IP",
-              "type": "text",
-              "value": "",
-              "label": {
-                "en": "IP",
-                "nl": "IP"
-              }
-            },
-            {
-              "id": "Version",
-              "type": "number",
-              "value": 3.1,
-              "label": {
-                "en": "Version",
-                "nl": "Version"
-              }
-            }
-          ]
-        }
-      ],
-      "images": {
-        "large": "/drivers/LSC_Smart_LED_Light_Strip/assets/images/large.png",
-        "small": "/drivers/LSC_Smart_LED_Light_Strip/assets/images/small.png"
-      }
-    },
     {
       "id": "ANCCY_Shutter_Timer_Switch",
       "name": {
@@ -780,88 +533,6 @@
       "images": {
         "large": "/drivers/ANCCY_Shutter_Timer_Switch/assets/images/large.png",
         "small": "/drivers/ANCCY_Shutter_Timer_Switch/assets/images/small.png"
-      }
-    },
-    {
-      "id": "NEO_SmartPlug",
-      "name": {
-        "nl": "NEO SmartPlug 2000W",
-        "en": "NEO SmartPlug 2000W"
-      },
-      "class": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "energy": {
-        "approximation": {
-          "usageOn": 0.5,
-          "usageOff": 0.5
-        }
-      },
-      "pair": [
-        {
-          "id": "pair"
-        }
-      ],
-      "settings": [
-        {
-          "type": "group",
-          "label": {
-            "en": "General settings",
-            "nl": "Algemene instellingen"
-          },
-          "children": [
-            {
-              "id": "DATAATLOG",
-              "type": "textarea",
-              "value": "",
-              "label": {
-                "en": "Data atribute log",
-                "nl": "Data atribute log"
-              }
-            },
-            {
-              "id": "ID",
-              "type": "text",
-              "value": "",
-              "label": {
-                "en": "ID",
-                "nl": "ID"
-              }
-            },
-            {
-              "id": "Key",
-              "type": "text",
-              "value": "",
-              "label": {
-                "en": "Key",
-                "nl": "Key"
-              }
-            },
-            {
-              "id": "IP",
-              "type": "text",
-              "value": "",
-              "label": {
-                "en": "IP",
-                "nl": "IP"
-              }
-            },
-            {
-              "id": "Version",
-              "type": "number",
-              "value": 3.1,
-              "label": {
-                "en": "Version",
-                "nl": "Version"
-              }
-            }
-          ]
-        }
-      ],
-      "images": {
-        "large": "/drivers/NEO_SmartPlug/assets/images/large.png",
-        "small": "/drivers/NEO_SmartPlug/assets/images/small.png"
       }
     },
     {
@@ -1050,6 +721,416 @@
       "images": {
         "large": "/drivers/AOFO_WiFi_Smart_Power_Strip/assets/images/large.png",
         "small": "/drivers/AOFO_WiFi_Smart_Power_Strip/assets/images/small.png"
+      }
+    },
+    {
+      "id": "GENERIC_Shutter_Timer_Switch",
+      "name": {
+        "nl": "GENERIC Shutter Timer Switch",
+        "en": "GENERIC Shutter Timer Switch"
+      },
+      "class": "curtain",
+      "capabilities": [
+        "windowcoverings_state"
+      ],
+      "pair": [
+        {
+          "id": "pair"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "DATAATLOG",
+              "type": "textarea",
+              "value": "",
+              "label": {
+                "en": "Data atribute log",
+                "nl": "Data atribute log"
+              }
+            },
+            {
+              "id": "ID",
+              "type": "text",
+              "value": "",
+              "label": {
+                "en": "ID",
+                "nl": "ID"
+              }
+            },
+            {
+              "id": "Key",
+              "type": "text",
+              "value": "",
+              "label": {
+                "en": "Key",
+                "nl": "Key"
+              }
+            },
+            {
+              "id": "IP",
+              "type": "text",
+              "value": "",
+              "label": {
+                "en": "IP",
+                "nl": "IP"
+              }
+            },
+            {
+              "id": "Version",
+              "type": "number",
+              "value": 3.1,
+              "label": {
+                "en": "Version",
+                "nl": "Version"
+              }
+            }
+          ]
+        }
+      ],
+      "images": {
+        "large": "/drivers/GENERIC_Shutter_Timer_Switch/assets/images/large.png",
+        "small": "/drivers/GENERIC_Shutter_Timer_Switch/assets/images/small.png"
+      }
+    },
+    {
+      "id": "LSC_Smart_Filament_LED",
+      "name": {
+        "nl": "LSC Smart Filament LED",
+        "en": "LSC Smart Filament LED"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "energy": {
+        "approximation": {
+          "usageOn": 6,
+          "usageOff": 0.5
+        }
+      },
+      "pair": [
+        {
+          "id": "pair"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "DATAATLOG",
+              "type": "textarea",
+              "value": "",
+              "label": {
+                "en": "Data atribute log",
+                "nl": "Data atribute log"
+              }
+            },
+            {
+              "id": "ID",
+              "type": "text",
+              "value": "",
+              "label": {
+                "en": "ID",
+                "nl": "ID"
+              }
+            },
+            {
+              "id": "Key",
+              "type": "text",
+              "value": "",
+              "label": {
+                "en": "Key",
+                "nl": "Key"
+              }
+            },
+            {
+              "id": "IP",
+              "type": "text",
+              "value": "",
+              "label": {
+                "en": "IP",
+                "nl": "IP"
+              }
+            },
+            {
+              "id": "Version",
+              "type": "number",
+              "value": 3.1,
+              "label": {
+                "en": "Version",
+                "nl": "Version"
+              }
+            }
+          ]
+        }
+      ],
+      "images": {
+        "large": "/drivers/LSC_Smart_Filament_LED/assets/images/large.png",
+        "small": "/drivers/LSC_Smart_Filament_LED/assets/images/small.png"
+      }
+    },
+    {
+      "id": "LSC_Smart_LED_Light_Strip",
+      "name": {
+        "nl": "LSC Smart LED Light Strip",
+        "en": "LSC Smart LED Light Strip"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_mode"
+      ],
+      "energy": {
+        "approximation": {
+          "usageOn": 22.5,
+          "usageOff": 0.5
+        }
+      },
+      "pair": [
+        {
+          "id": "pair"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "DATAATLOG",
+              "type": "textarea",
+              "value": "",
+              "label": {
+                "en": "Data atribute log",
+                "nl": "Data atribute log"
+              }
+            },
+            {
+              "id": "ID",
+              "type": "text",
+              "value": "",
+              "label": {
+                "en": "ID",
+                "nl": "ID"
+              }
+            },
+            {
+              "id": "Key",
+              "type": "text",
+              "value": "",
+              "label": {
+                "en": "Key",
+                "nl": "Key"
+              }
+            },
+            {
+              "id": "IP",
+              "type": "text",
+              "value": "",
+              "label": {
+                "en": "IP",
+                "nl": "IP"
+              }
+            },
+            {
+              "id": "Version",
+              "type": "number",
+              "value": 3.1,
+              "label": {
+                "en": "Version",
+                "nl": "Version"
+              }
+            }
+          ]
+        }
+      ],
+      "images": {
+        "large": "/drivers/LSC_Smart_LED_Light_Strip/assets/images/large.png",
+        "small": "/drivers/LSC_Smart_LED_Light_Strip/assets/images/small.png"
+      }
+    },
+    {
+      "id": "LSC_Smart_Power_Plug",
+      "name": {
+        "nl": "LSC Smart Power Plug",
+        "en": "LSC Smart Power Plug"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "energy": {
+        "approximation": {
+          "usageOn": 0.5,
+          "usageOff": 0.5
+        }
+      },
+      "pair": [
+        {
+          "id": "pair"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "DATAATLOG",
+              "type": "textarea",
+              "value": "",
+              "label": {
+                "en": "Data atribute log",
+                "nl": "Data atribute log"
+              }
+            },
+            {
+              "id": "ID",
+              "type": "text",
+              "value": "",
+              "label": {
+                "en": "ID",
+                "nl": "ID"
+              }
+            },
+            {
+              "id": "Key",
+              "type": "text",
+              "value": "",
+              "label": {
+                "en": "Key",
+                "nl": "Key"
+              }
+            },
+            {
+              "id": "IP",
+              "type": "text",
+              "value": "",
+              "label": {
+                "en": "IP",
+                "nl": "IP"
+              }
+            },
+            {
+              "id": "Version",
+              "type": "number",
+              "value": 3.1,
+              "label": {
+                "en": "Version",
+                "nl": "Version"
+              }
+            }
+          ]
+        }
+      ],
+      "images": {
+        "large": "/drivers/LSC_Smart_Power_Plug/assets/images/large.png",
+        "small": "/drivers/LSC_Smart_Power_Plug/assets/images/small.png"
+      }
+    },
+    {
+      "id": "NEO_SmartPlug",
+      "name": {
+        "nl": "NEO SmartPlug 2000W",
+        "en": "NEO SmartPlug 2000W"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "energy": {
+        "approximation": {
+          "usageOn": 0.5,
+          "usageOff": 0.5
+        }
+      },
+      "pair": [
+        {
+          "id": "pair"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "DATAATLOG",
+              "type": "textarea",
+              "value": "",
+              "label": {
+                "en": "Data atribute log",
+                "nl": "Data atribute log"
+              }
+            },
+            {
+              "id": "ID",
+              "type": "text",
+              "value": "",
+              "label": {
+                "en": "ID",
+                "nl": "ID"
+              }
+            },
+            {
+              "id": "Key",
+              "type": "text",
+              "value": "",
+              "label": {
+                "en": "Key",
+                "nl": "Key"
+              }
+            },
+            {
+              "id": "IP",
+              "type": "text",
+              "value": "",
+              "label": {
+                "en": "IP",
+                "nl": "IP"
+              }
+            },
+            {
+              "id": "Version",
+              "type": "number",
+              "value": 3.1,
+              "label": {
+                "en": "Version",
+                "nl": "Version"
+              }
+            }
+          ]
+        }
+      ],
+      "images": {
+        "large": "/drivers/NEO_SmartPlug/assets/images/large.png",
+        "small": "/drivers/NEO_SmartPlug/assets/images/small.png"
       }
     },
     {

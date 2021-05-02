@@ -1,0 +1,14 @@
+      {
+        "id": "Socusb_ton",
+        "title": {
+          "en": "Turn socket usb on",
+          "nl": "Zet socket usb aan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
+      }

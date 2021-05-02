@@ -1,0 +1,14 @@
+      {
+        "id": "Socusb_toff",
+        "title": {
+          "en": "Turn socket usb off",
+          "nl": "Zet socket usb uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
+      }

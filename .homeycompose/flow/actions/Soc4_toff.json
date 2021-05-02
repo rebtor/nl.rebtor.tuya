@@ -1,0 +1,14 @@
+      {
+        "id": "Soc4_toff",
+        "title": {
+          "en": "Turn socket 4 off",
+          "nl": "Zet socket 4 uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
+      }

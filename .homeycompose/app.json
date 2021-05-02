@@ -7,27 +7,27 @@
   "description": {
     "en": "A Tuyapi implementation for homey",
     "nl": "Een Tuyapi implementatie voor homey"
-  },  
+  },
   "category": [
     "lights"
-  ],  
-  "version": "2.0.1",
+  ],
+  "version": "2.1.3",
   "compatibility": ">=5.0.0",
-  "homeyCommunityTopicId": 15811, 
+  "homeyCommunityTopicId": 15811,
   "sdk": 3,
   "author": {
     "name": "Rens Brandwijk",
     "email": "rebtor@gmail.com"
   },
-   "contributing": {
-   "donate": {
-   "paypal": {
+  "contributing": {
+    "donate": {
+      "paypal": {
         "username": "rebtor"
       }
     }
   },
-	"images": {
-        "large": "/drivers/NEO_SmartPlug_3600/assets/images/large.png",
-        "small": "/drivers/NEO_SmartPlug_3600/assets/images/small.png"
-      }
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  }
 }

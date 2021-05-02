@@ -63,7 +63,21 @@ module.exports = {
                     console.error(err);
                 });
             }
+            // verwerk shutter 2
+            if (data.dps.hasOwnProperty('1') == true && type == 'windowcoverings_state2') {
 
+                if (data.dps['1'] == 'on') {
+                    var shutter = 'up';
+                } else if (data.dps['1'] == 'off') {
+                    var shutter = 'down';
+                } else {
+                    var shutter = 'idle';
+                }
+                device.setCapabilityValue('windowcoverings_state', shutter)
+                .catch(err => {
+                    console.error(err);
+                });
+            }	
             // onoff devices
 
             // verwerk onoff
@@ -117,7 +131,7 @@ module.exports = {
                         console.error(err);
                     });
 
-                    this._driver = device.getDriver();
+                    this._driver = device.driver;
 
                     if (data.dps['1'] == true) {
                         this._driver.TriggerSoc1On(device, {}, {});
@@ -134,7 +148,7 @@ module.exports = {
                         console.error(err);
                     });
 
-                    this._driver = device.getDriver();
+                    this._driver = device.driver;
 
                     if (data.dps['2'] == true) {
                         this._driver.TriggerSoc2On(device, {}, {});
@@ -152,7 +166,7 @@ module.exports = {
                         console.error(err);
                     });
 
-                    this._driver = device.getDriver();
+                    this._driver = device.driver;
 
                     if (data.dps['3'] == true) {
                         this._driver.TriggerSoc3On(device, {}, {});
@@ -169,7 +183,7 @@ module.exports = {
                         console.error(err);
                     });
 
-                    this._driver = device.getDriver();
+                    this._driver = device.driver;
 
                     if (data.dps['4'] == true) {
                         this._driver.TriggerSoc4On(device, {}, {});
@@ -186,7 +200,7 @@ module.exports = {
                         console.error(err);
                     });
 
-                    this._driver = device.getDriver();
+                    this._driver = device.driver;
 
                     if (data.dps['7'] == true) {
                         this._driver.TriggerSocusbOn(device, {}, {});
@@ -375,6 +389,23 @@ module.exports = {
             .catch(err => {
                 console.error(err);
             });
+        } else if (parameter == 'windowcoverings_state2') {
+            this.devicelog('Device: shutter value ', value);
+			if (value == 'up') {
+                var shuttervalue = 'on';
+            } else if (value == 'down') {
+                var shuttervalue = 'off';
+            } else {
+                var shuttervalue = 'stop';
+            }
+            this.devicelog('Device: shutterstate ', shuttervalue);
+            return APIdevice.set({
+                dps: 1,
+                set: shuttervalue
+            })
+            .catch(err => {
+                console.error(err);
+            });
         } else if (parameter == 'dim2') {
             var dimvalue = Math.round(value * 255);
             this.devicelog('Device: dim to ', dimvalue);
@@ -490,10 +521,10 @@ module.exports = {
 
             if (value == true) {
 
-                this._driver = device.getDriver();
+                this._driver = device.driver;
                 this._driver.TriggerSoc1On(device, {}, {});
             } else {
-                this._driver = device.getDriver();
+                this._driver = device.driver;
                 this._driver.TriggerSoc1Off(device, {}, {});
             }
 

@@ -1,0 +1,14 @@
+      {
+        "id": "Soc2_toff",
+        "title": {
+          "en": "Turn socket 2 off",
+          "nl": "Zet socket 2 uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
+      }

@@ -1,0 +1,14 @@
+      {
+        "id": "Soc3_toggle",
+        "title": {
+          "en": "Toggle socket 3 on or off",
+          "nl": "Zet socket 3 aan of uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
+      }

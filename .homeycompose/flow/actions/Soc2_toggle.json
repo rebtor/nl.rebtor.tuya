@@ -1,0 +1,14 @@
+      {
+        "id": "Soc2_toggle",
+        "title": {
+          "en": "Toggle socket 2 on or off",
+          "nl": "Zet socket 2 aan of uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
+      }

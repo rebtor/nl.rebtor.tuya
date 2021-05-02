@@ -1,0 +1,14 @@
+{
+"id": "Socusb_on",
+"title": {
+  "en": "Socket usb turned !{{on|off}}",
+  "nl": "Socket usb is !{{aangezet|uitgezet}}"
+},
+"args": [
+  {
+	"type": "device",
+	"name": "device",
+	"filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+  }
+]
+}

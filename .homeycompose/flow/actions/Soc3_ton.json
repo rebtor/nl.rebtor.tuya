@@ -1,0 +1,14 @@
+{
+"id": "Soc3_ton",
+"title": {
+  "en": "Turn socket 3 on",
+  "nl": "Zet socket 3 aan"
+},
+"args": [
+  {
+	"type": "device",
+	"name": "device",
+	"filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+  }
+]
+}

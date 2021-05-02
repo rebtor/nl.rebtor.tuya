@@ -1,0 +1,14 @@
+      {
+        "id": "Socusb_toggle",
+        "title": {
+          "en": "Toggle socket usb on or off",
+          "nl": "Zet socket usb aan of uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=AOFO_WiFi_Smart_Power_Strip"
+          }
+        ]
+      }
