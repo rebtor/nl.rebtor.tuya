@@ -3,6 +3,20 @@
 A implementation of [TuyAPI] (https://github.com/codetheweb/tuyapi/) for use with homey. 
 
 ## CHANGELOG
+* 2.1.3
+	- Fixed crash with multisocket devices
+* 2.1.2
+	- I did forget to merge the generic shutter device from SDK 2 to SDK 3 version
+* 2.1.1
+    Fixed the mixup between LSC_SMART_POWER_PLUG and LSC_SMART_LED_STRIP
+ 2.1.0
+	- Revert to SDK 3
+* 2.0.2
+    - Fix on / off ledstrip and usage of homey composer
+* 2.0.1
+    - Updated TuyApi libery"
+* 2.0.0
+    - SDK 3 and Homey 5.0.0 support
 * 1.2.0
 	- SDK update and making the app ready for 5.0.0 + 
 * 1.1.4 
