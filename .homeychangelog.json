@@ -70,5 +70,8 @@
   },
   "2.1.3": {
     "en": "Fixed driver reference for AOFO_WiFi_Smart_Power_Strip"
+  },
+  "2.1.4": {
+    "en": "Added NOUS 3 + usb device and fixed AOFO device. For now removed flowcards from multisock devices"
   }
 }

@@ -1,0 +1,172 @@
+{
+  "id": "NOUS_WiFi_Smart_Power_Strip_3",
+  "name": {
+	"nl": "NOUS WiFi Smart Power Strip",
+	"en": "NOUS WiFi Smart Power Strip"
+  },
+  "class": "socket",
+  "capabilities": [
+	"onoff",
+	"onoff.soc1",
+	"onoff.soc2",
+	"onoff.soc3",
+	"onoff.socusb"
+  ],
+  "capabilitiesOptions": {
+	"onoff": {
+	  "title": {
+		"en": "Switch all"
+	  },
+	  "greyout": false,
+	  "energy": {
+		"approximation": {
+		  "cumulative": true,
+		  "usageOn": 0.5,
+		  "usageOff": 0.5
+		}
+	  }
+	},
+	"onoff.soc1": {
+	  "title": {
+		"en": "Switch 1"
+	  },
+	  "greyout": false
+	},
+	"onoff.soc2": {
+	  "title": {
+		"en": "Switch 2"
+	  },
+	  "greyout": false
+	},
+	"onoff.soc3": {
+	  "title": {
+		"en": "Switch 3"
+	  },
+	  "greyout": false
+	},
+	"onoff.socusb": {
+	  "title": {
+		"en": "Switch usb"
+	  },
+	  "greyout": false
+	}
+  },
+  "mobile": {
+	"components": [
+	  {
+		"id": "icon",
+		"capabilities": []
+	  },
+	  {
+		"id": "toggle",
+		"capabilities": [
+		  "onoff"
+		],
+		"options": {
+		  "showTitle": true
+		}
+	  },
+	  {
+		"id": "toggle",
+		"capabilities": [
+		  "onoff.soc1"
+		],
+		"options": {
+		  "showTitle": true
+		}
+	  },
+	  {
+		"id": "toggle",
+		"capabilities": [
+		  "onoff.soc2"
+		],
+		"options": {
+		  "showTitle": true
+		}
+	  },
+	  {
+		"id": "toggle",
+		"capabilities": [
+		  "onoff.soc3"
+		],
+		"options": {
+		  "showTitle": true
+		}
+	  },
+	  {
+		"id": "toggle",
+		"capabilities": [
+		  "onoff.socusb"
+		],
+		"options": {
+		  "showTitle": true
+		}
+	  }
+	]
+  },
+  "pair": [
+	{
+	  "id": "pair"
+	}
+  ],
+  "settings": [
+	{
+	  "type": "group",
+	  "label": {
+		"en": "General settings",
+		"nl": "Algemene instellingen"
+	  },
+	  "children": [
+		{
+		  "id": "DATAATLOG",
+		  "type": "textarea",
+		  "value": "",
+		  "label": {
+			"en": "Data atribute log",
+			"nl": "Data atribute log"
+		  }
+		},
+		{
+		  "id": "ID",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "ID",
+			"nl": "ID"
+		  }
+		},
+		{
+		  "id": "Key",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "Key",
+			"nl": "Key"
+		  }
+		},
+		{
+		  "id": "IP",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "IP",
+			"nl": "IP"
+		  }
+		},
+		{
+		  "id": "Version",
+		  "type": "number",
+		  "value": 3.1,
+		  "label": {
+			"en": "Version",
+			"nl": "Version"
+		  }
+		}
+	  ]
+	}
+  ],
+  "images": {
+	"large": "/drivers/NOUS_WiFi_Smart_Power_Strip_3/assets/images/large.png",
+	"small": "/drivers/NOUS_WiFi_Smart_Power_Strip_3/assets/images/small.png"
+  }
+}

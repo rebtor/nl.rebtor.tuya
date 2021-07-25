@@ -11,10 +11,11 @@
   "category": [
     "lights"
   ],
-  "version": "2.1.3",
+  "version": "2.1.4",
   "compatibility": ">=5.0.0",
   "homeyCommunityTopicId": 15811,
   "sdk": 3,
+  "brandColor": "#507672",
   "author": {
     "name": "Rens Brandwijk",
     "email": "rebtor@gmail.com"

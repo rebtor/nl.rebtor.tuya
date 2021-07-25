@@ -48,7 +48,7 @@ function Tuyadevicedata(device_data) {
 
     APIdevice.on('data', data => {
         Tuydriver.devicelog('Data from device:', data, 'mulsoc');
-        Tuydriver.processdata(device, data, 'mulsoc');
+		Tuydriver.processdata(device, data, 'mulsoc3');
     });
 
     device.registerCapabilityListener('onoff', async(value) => {
@@ -65,10 +65,6 @@ function Tuyadevicedata(device_data) {
 
     device.registerCapabilityListener('onoff.soc3', async(value) => {
         Tuydriver.sendvalues(device, APIdevice, value, 'mulsoc3');
-    });
-
-    device.registerCapabilityListener('onoff.soc4', async(value) => {
-        Tuydriver.sendvalues(device, APIdevice, value, 'mulsoc4');
     });
 
     device.registerCapabilityListener('onoff.socusb', async(value) => {

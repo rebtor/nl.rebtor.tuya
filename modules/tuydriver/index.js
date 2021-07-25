@@ -1,5 +1,6 @@
 'use strict';
 var logging = true;
+const Homey = require('homey');
 
 module.exports = {
 
@@ -112,7 +113,7 @@ module.exports = {
                 });
             }
 
-            // multisocket devices
+            // multisocket devices 4 + USB
 
 
             // verwerk socket main
@@ -120,94 +121,63 @@ module.exports = {
                 var soc1 = device.getCapabilityValue('onoff.soc1');
                 var soc2 = device.getCapabilityValue('onoff.soc2');
                 var soc3 = device.getCapabilityValue('onoff.soc3');
-                var soc4 = device.getCapabilityValue('onoff.soc4');
+				var soc4 = device.getCapabilityValue('onoff.soc4');
                 var socusb = device.getCapabilityValue('onoff.socusb');
-
+				
+				this.devicelog('SwitchSocket 1: ',soc1);
+				this.devicelog('SwitchSocket 2: ',soc2);
+				this.devicelog('SwitchSocket 3: ',soc3);
+				this.devicelog('SwitchSocket 4: ',soc4);
+				this.devicelog('SwitchSocket usb: ',socusb);				
+				
                 // verwerk socket 1
                 if (data.dps.hasOwnProperty('1') == true && type == 'mulsoc') {
                     var soc1 = data.dps['1'];
-                    device.setCapabilityValue('onoff.soc1', data.dps['1'])
+                    this.devicelog('SwitchSocket 1: ',soc1);
+					device.setCapabilityValue('onoff.soc1', data.dps['1'])
                     .catch(err => {
                         console.error(err);
                     });
-
-                    this._driver = device.driver;
-
-                    if (data.dps['1'] == true) {
-                        this._driver.TriggerSoc1On(device, {}, {});
-                    } else {
-                        this._driver.TriggerSoc1Off(device, {}, {});
-                    }
                 }
 
                 // verwerk socket 2
                 if (data.dps.hasOwnProperty('2') == true && type == 'mulsoc') {
                     var soc2 = data.dps['2'];
-                    device.setCapabilityValue('onoff.soc2', data.dps['2'])
+                    this.devicelog('SwitchSocket 2: ',soc2);
+					device.setCapabilityValue('onoff.soc2', data.dps['2'])
                     .catch(err => {
                         console.error(err);
                     });
-
-                    this._driver = device.driver;
-
-                    if (data.dps['2'] == true) {
-                        this._driver.TriggerSoc2On(device, {}, {});
-                    } else {
-                        this._driver.TriggerSoc2Off(device, {}, {});
-                    }
-
                 }
 
-                // verwerk socket 3
+				// verwerk socket 3
                 if (data.dps.hasOwnProperty('3') == true && type == 'mulsoc') {
                     var soc3 = data.dps['3'];
+                    this.devicelog('SwitchSocket 3: ',soc3);
                     device.setCapabilityValue('onoff.soc3', data.dps['3'])
                     .catch(err => {
                         console.error(err);
                     });
-
-                    this._driver = device.driver;
-
-                    if (data.dps['3'] == true) {
-                        this._driver.TriggerSoc3On(device, {}, {});
-                    } else {
-                        this._driver.TriggerSoc3Off(device, {}, {});
-                    }
                 }
-
-                // verwerk socket 4
-                if (data.dps.hasOwnProperty('4') == true && type == 'mulsoc') {
-                    var soc4 = data.dps['4'];
-                    device.setCapabilityValue('onoff.soc4', data.dps['4'])
-                    .catch(err => {
-                        console.error(err);
+				
+				// 		verwerk socket 4
+		 		if (data.dps.hasOwnProperty('4') == true && type == 'mulsoc') {
+					var soc4 = data.dps['4'];
+					this.devicelog('SwitchSocket 4: ',soc4);
+					device.setCapabilityValue('onoff.soc4', data.dps['4'])
+					.catch(err => {
+						console.error(err);
                     });
-
-                    this._driver = device.driver;
-
-                    if (data.dps['4'] == true) {
-                        this._driver.TriggerSoc4On(device, {}, {});
-                    } else {
-                        this._driver.TriggerSoc4Off(device, {}, {});
-                    }
                 }
 
                 // verwerk socket usb
                 if (data.dps.hasOwnProperty('7') == true && type == 'mulsoc') {
                     var socusb = data.dps['7'];
-                    device.setCapabilityValue('onoff.socusb', data.dps['7'])
+                    this.devicelog('Switch USB: ',socusb);
+					device.setCapabilityValue('onoff.socusb', data.dps['7'])
                     .catch(err => {
                         console.error(err);
                     });
-
-                    this._driver = device.driver;
-
-                    if (data.dps['7'] == true) {
-                        this._driver.TriggerSocusbOn(device, {}, {});
-                    } else {
-                        this._driver.TriggerSocusbOff(device, {}, {});
-                    }
-
                 }
 
                 if (soc1 == false && soc2 == false && soc3 == false && soc4 == false && socusb == false) {
@@ -215,11 +185,79 @@ module.exports = {
                 } else {
                     var total_value = true;
                 }
+				this.devicelog('Switch all multisock: ',total_value);
                 device.setCapabilityValue('onoff', total_value)
                 .catch(err => {
                     console.error(err);
                 });
             }
+
+            // multisocket devices 3 + USB
+
+            // verwerk socket main
+            if (type == 'mulsoc3') {
+                var soc1 = device.getCapabilityValue('onoff.soc1');
+                var soc2 = device.getCapabilityValue('onoff.soc2');
+                var soc3 = device.getCapabilityValue('onoff.soc3');
+                var socusb = device.getCapabilityValue('onoff.socusb');
+				
+				this.devicelog('SwitchSocket 1: ',soc1);
+				this.devicelog('SwitchSocket 2: ',soc2);
+				this.devicelog('SwitchSocket 3: ',soc3);
+				this.devicelog('SwitchSocket usb: ',socusb);				
+				
+                // verwerk socket 1
+                if (data.dps.hasOwnProperty('1') == true && type == 'mulsoc3') {
+                    var soc1 = data.dps['1'];
+                    this.devicelog('SwitchSocket 1: ',soc1);
+					device.setCapabilityValue('onoff.soc1', data.dps['1'])
+                    .catch(err => {
+                        console.error(err);
+                    });
+                }
+
+                // verwerk socket 2
+                if (data.dps.hasOwnProperty('2') == true && type == 'mulsoc3') {
+                    var soc2 = data.dps['2'];
+                    this.devicelog('SwitchSocket 2: ',soc2);
+					device.setCapabilityValue('onoff.soc2', data.dps['2'])
+                    .catch(err => {
+                        console.error(err);
+                    });
+                }
+
+				//	verwerk socket 3
+                if (data.dps.hasOwnProperty('3') == true && type == 'mulsoc3') {
+                    var soc3 = data.dps['3'];
+                    this.devicelog('SwitchSocket 3: ',soc3);
+                    device.setCapabilityValue('onoff.soc3', data.dps['3'])
+                    .catch(err => {
+                        console.error(err);
+                    });
+                }
+
+                // verwerk socket usb
+                if (data.dps.hasOwnProperty('7') == true && type == 'mulsoc3') {
+                    var socusb = data.dps['7'];
+                    this.devicelog('Switch USB: ',socusb);
+					device.setCapabilityValue('onoff.socusb', data.dps['7'])
+                    .catch(err => {
+                        console.error(err);
+                    });
+                }
+
+                if (soc1 == false && soc2 == false && soc3 == false && socusb == false) {
+                    var total_value = false;
+                } else {
+                    var total_value = true;
+                }
+				this.devicelog('Switch all multisock: ',total_value);
+                device.setCapabilityValue('onoff', total_value)
+                .catch(err => {
+                    console.error(err);
+                });
+            }
+
 
             // Filament devices
 
@@ -519,14 +557,14 @@ module.exports = {
                 console.error(err);
             });
 
-            if (value == true) {
+		if (value == true) {
 
-                this._driver = device.driver;
-                this._driver.TriggerSoc1On(device, {}, {});
-            } else {
-                this._driver = device.driver;
-                this._driver.TriggerSoc1Off(device, {}, {});
-            }
+			this._driver = device.driver;
+			this._driver.TriggerSoc1On(device, {}, {});
+		} else {
+			this._driver = device.driver;
+			this._driver.TriggerSoc1Off(device, {}, {});
+		}
 
         } else if (parameter == 'mulsoc2') {
             let currentValueSoc2 = device.getCapabilityValue('onoff.Soc2');
