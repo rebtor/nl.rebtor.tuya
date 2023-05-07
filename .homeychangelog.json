@@ -73,5 +73,14 @@
   },
   "2.1.4": {
     "en": "Added NOUS 3 + usb device and fixed AOFO device. For now removed flowcards from multisock devices"
+  },
+  "3.0.0": {
+    "en": "Homey pro 2023 ready, added automated discovery for generic devices (fill in the settings page), NEO, and LSC strip are now deprecated use the generic devices. "
+  },
+  "3.1.0": {
+    "en": "Deprecated all non generic devices. Updated images to fit appstore requirements"
+  },
+  "3.1.1": {
+    "en": "Small changes to readme"
   }
 }

@@ -78,5 +78,6 @@
   "images": {
 	"large": "/drivers/LSC_Smart_Power_Plug/assets/images/large.png",
 	"small": "/drivers/LSC_Smart_Power_Plug/assets/images/small.png"
-  }
+  },
+  "deprecated": true
 }

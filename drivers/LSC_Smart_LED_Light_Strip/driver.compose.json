@@ -82,5 +82,6 @@
   "images": {
 	"large": "/drivers/LSC_Smart_LED_Light_Strip/assets/images/large.png",
 	"small": "/drivers/LSC_Smart_LED_Light_Strip/assets/images/small.png"
-  }
+  },
+  "deprecated": true
 }

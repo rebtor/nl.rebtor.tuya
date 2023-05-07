@@ -12,9 +12,16 @@
 	"measure_current"
   ],
   "pair": [
-	{
-	  "id": "pair"
-	}
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": { "next": "add_devices" },
+      "options": { "singular": true }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
   ],
   "settings": [
 	{
@@ -68,6 +75,33 @@
 			"en": "Version",
 			"nl": "Version"
 		  }
+		}, 
+		{
+		  "id": "DeviceTypeCode",
+		  "type": "label",
+		  "value": "cz",
+		  "label": {
+			"en": "DeviceType",
+			"nl": "DeviceType"
+		  }
+		},
+		{
+		  "id": "ProductIDCode",
+		  "type": "label",
+		  "value": "qge4qpgtumbnuxi6",
+		  "label": {
+			"en": "DeviceType",
+			"nl": "DeviceType"
+		  }
+		},		
+		{
+		  "id": "ModelTypeCode",
+		  "type": "label",
+		  "value": "BL0937",
+		  "label": {
+			"en": "ModelType",
+			"nl": "ModelType"
+		  }
 		}
 	  ]
 	}
@@ -75,5 +109,6 @@
   "images": {
 	"large": "/drivers/NEO_SmartPlug_3600/assets/images/large.png",
 	"small": "/drivers/NEO_SmartPlug_3600/assets/images/small.png"
-  }
+  },
+  "deprecated": true
 }

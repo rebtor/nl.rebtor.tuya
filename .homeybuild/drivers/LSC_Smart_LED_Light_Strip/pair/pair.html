@@ -1,0 +1,90 @@
+<style type="text/css">
+  span label {
+    wIPth: 100px
+  }
+</style>
+<script type="text/javascript">
+  // Set window options
+  var wIPth	= 400;
+  var height	= 400;
+  var left	= (screen.wIPth/2)-(wIPth/2);
+  var top	= (screen.height/2)-(height/2);
+  var url;
+
+  // Set translated items
+  $("label[for='name']").text(__('pair.configuration.name') + ':');
+  $("label[for='IP']").text(__('pair.configuration.IP') + ':');
+  $("label[for='ID']").text(__('pair.configuration.ID') + ':');
+  $("label[for='Key']").text(__('pair.configuration.Key') + ':');
+function configure() {
+		//variables
+		var name 		= $("#name").val();
+		var IP 			= $("#IP").val();
+		var ID 			= $("#ID").val();
+		var Key 		= $("#Key").val();
+		
+		if (Key.length !== 16) {
+			Homey.alert(__('pair.keylength'), 'error');
+		}
+		else {
+		if (IP != '' || ID != '') {
+			var settings = {
+				name: name,
+				IP: IP,
+				ID: ID,
+				Key: Key,
+			};
+		
+			// Continue to back-end, pass along data
+			Homey.emit( 'validate', settings, function( err, result ){
+			if (err) {
+				console.log(err);
+				Homey.alert(err.message, 'error');
+			} else {
+				Homey.alert(__('pair.success'), 'info');
+				var device = {
+				data: { // this data object is saved to- and unique for the device. It is passed on the get and set functions as 1st argument
+					IP: name + '-' + IP + ID // something unique, so your driver knows which physical device it is. A MAC address or Node IP, for example. This is required
+				},
+				name: name,
+				settings: {
+					name: name,
+					IP: IP,
+					ID: ID,
+					Key: Key,
+				}
+				};				
+				Homey.addDevice(device, function( err, result ){
+		    	if( err ) {	Homey.alert(err, 'error'); return }
+					setTimeout(function () {
+						Homey.done();
+					}, 5000);
+				});
+				Homey.done();}
+		});
+	} else {
+		Homey.alert(__('pair.required'), 'error');
+		// Homey.done();
+	}}
+}
+</script>
+
+<p IP="authentication_text" data-i18n="pair.authorization.configuration_explanation"></p>
+<p class="form-group">
+  <span class="input-wrap">
+    <label for="name"></label>
+    <input type="text" ID="name"></input>
+	
+	<label for="IP"></label>
+    <input type="text" ID="IP"></input>
+
+	<label for="Key"></label>
+    <input type="text" ID="Key"></input>
+	
+	<label for="ID"></label>
+    <input type="text" ID="ID"></input>
+  </span>
+</p>
+<button class="button" ID="authentication_button" onclick="configure();" data-i18n="pair.authorization.start_configuration" />
+<br /><br />
+<p class="youless-err-msg" style="color: #ff6300;"></p>

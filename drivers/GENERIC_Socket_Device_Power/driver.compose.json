@@ -1,0 +1,113 @@
+{
+  "id": "Generic_Socket_Device_Power",
+  "name": {
+	"nl": "Socket Device met stroommeting",
+	"en": "Socket Device with powermeter"
+  },
+  "class": "socket",
+  "capabilities": [
+	"onoff",
+	"measure_power",
+	"measure_voltage",
+	"measure_current"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": { "next": "add_devices" },
+      "options": { "singular": true }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+	{
+	  "type": "group",
+	  "label": {
+		"en": "General settings",
+		"nl": "Algemene instellingen"
+	  },
+	  "children": [
+		{
+		  "id": "DATAATLOG",
+		  "type": "textarea",
+		  "value": "",
+		  "label": {
+			"en": "Data atribute log",
+			"nl": "Data atribute log"
+		  }
+		},
+		{
+		  "id": "ID",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "ID",
+			"nl": "ID"
+		  }
+		},
+		{
+		  "id": "Key",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "Key",
+			"nl": "Key"
+		  }
+		},
+		{
+		  "id": "IP",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "IP",
+			"nl": "IP"
+		  }
+		},
+		{
+		  "id": "Version",
+		  "type": "number",
+		  "value": 3.1,
+		  "label": {
+			"en": "Version",
+			"nl": "Version"
+		  }
+		},
+		{
+		  "id": "DeviceTypeCode",
+		  "type": "label",
+		  "value": "cz",
+		  "label": {
+			"en": "DeviceType",
+			"nl": "DeviceType"
+		  }
+		},
+		{
+		  "id": "ProductIDCode",
+		  "type": "label",
+		  "value": "",
+		  "label": {
+			"en": "DeviceType",
+			"nl": "DeviceType"
+		  }
+		},		
+		{
+		  "id": "ModelTypeCode",
+		  "type": "label",
+		  "value": "",
+		  "label": {
+			"en": "ModelType",
+			"nl": "ModelType"
+		  }
+		}
+	  ]
+	}
+  ],
+  "images": {
+	"large": "/drivers/GENERIC_Socket_Device_Power/assets/images/large.png",
+	"small": "/drivers/GENERIC_Socket_Device_Power/assets/images/small.png"
+  }
+}

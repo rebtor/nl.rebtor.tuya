@@ -1,0 +1,222 @@
+{
+  "id": "GENERIC_Power_Strip_4_USB",
+  "name": {
+	"nl": "Powerstrip 4 + usb",
+	"en": "Powerstrip 4 + usb"
+  },
+  "class": "socket",
+  "capabilities": [
+	"onoff",
+	"onoff.soc1",
+	"onoff.soc2",
+	"onoff.soc3",
+	"onoff.soc4",
+	"onoff.socusb"
+  ],
+  "capabilitiesOptions": {
+	"onoff": {
+	  "title": {
+		"en": "Switch all"
+	  },
+	  "greyout": false,
+	  "energy": {
+		"approximation": {
+		  "cumulative": true,
+		  "usageOn": 0.5,
+		  "usageOff": 0.5
+		}
+	  }
+	},
+	"onoff.soc1": {
+	  "title": {
+		"en": "Switch 1"
+	  },
+	  "greyout": false
+	},
+	"onoff.soc2": {
+	  "title": {
+		"en": "Switch 2"
+	  },
+	  "greyout": false
+	},
+	"onoff.soc3": {
+	  "title": {
+		"en": "Switch 3"
+	  },
+	  "greyout": false
+	},
+	"onoff.soc4": {
+	  "title": {
+		"en": "Switch 4"
+	  },
+	  "greyout": false
+	},
+	"onoff.socusb": {
+	  "title": {
+		"en": "Switch usb"
+	  },
+	  "greyout": false
+	}
+  },
+  "mobile": {
+	"components": [
+	  {
+		"id": "icon",
+		"capabilities": []
+	  },
+	  {
+		"id": "toggle",
+		"capabilities": [
+		  "onoff"
+		],
+		"options": {
+		  "showTitle": true
+		}
+	  },
+	  {
+		"id": "toggle",
+		"capabilities": [
+		  "onoff.soc1"
+		],
+		"options": {
+		  "showTitle": true
+		}
+	  },
+	  {
+		"id": "toggle",
+		"capabilities": [
+		  "onoff.soc2"
+		],
+		"options": {
+		  "showTitle": true
+		}
+	  },
+	  {
+		"id": "toggle",
+		"capabilities": [
+		  "onoff.soc3"
+		],
+		"options": {
+		  "showTitle": true
+		}
+	  },
+	  {
+		"id": "toggle",
+		"capabilities": [
+		  "onoff.soc4"
+		],
+		"options": {
+		  "showTitle": true
+		}
+	  },
+	  {
+		"id": "toggle",
+		"capabilities": [
+		  "onoff.socusb"
+		],
+		"options": {
+		  "showTitle": true
+		}
+	  }
+	]
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": { "next": "add_devices" },
+      "options": { "singular": true }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+	{
+	  "type": "group",
+	  "label": {
+		"en": "General settings",
+		"nl": "Algemene instellingen"
+	  },
+	  "children": [
+		{
+		  "id": "DATAATLOG",
+		  "type": "textarea",
+		  "value": "",
+		  "label": {
+			"en": "Data atribute log",
+			"nl": "Data atribute log"
+		  }
+		},
+		{
+		  "id": "ID",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "ID",
+			"nl": "ID"
+		  }
+		},
+		{
+		  "id": "Key",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "Key",
+			"nl": "Key"
+		  }
+		},
+		{
+		  "id": "IP",
+		  "type": "text",
+		  "value": "",
+		  "label": {
+			"en": "IP",
+			"nl": "IP"
+		  }
+		},
+		{
+		  "id": "Version",
+		  "type": "number",
+		  "value": 3.1,
+		  "label": {
+			"en": "Version",
+			"nl": "Version"
+		  }
+		},
+		{
+		  "id": "DeviceTypeCode",
+		  "type": "label",
+		  "value": "pc",
+		  "label": {
+			"en": "DeviceType",
+			"nl": "DeviceType"
+		  }
+		},
+		{
+		  "id": "ProductIDCode",
+		  "type": "label",
+		  "value": "",
+		  "label": {
+			"en": "DeviceType",
+			"nl": "DeviceType"
+		  }
+		},		
+		{
+		  "id": "ModelTypeCode",
+		  "type": "label",
+		  "value": "",
+		  "label": {
+			"en": "ModelType",
+			"nl": "ModelType"
+		  }
+		}
+	  ]
+	}
+  ],
+  "images": {
+	"large": "/drivers/GENERIC_Power_Strip_4_USB/assets/images/large.png",
+	"small": "/drivers/GENERIC_Power_Strip_3_USB/assets/images/small.png"
+  }
+}

@@ -168,5 +168,6 @@
   "images": {
 	"large": "/drivers/NOUS_WiFi_Smart_Power_Strip_3/assets/images/large.png",
 	"small": "/drivers/NOUS_WiFi_Smart_Power_Strip_3/assets/images/small.png"
-  }
+  },
+  	 "deprecated": true
 }

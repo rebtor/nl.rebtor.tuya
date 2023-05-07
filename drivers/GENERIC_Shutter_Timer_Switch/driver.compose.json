@@ -1,17 +1,24 @@
 {
   "id": "GENERIC_Shutter_Timer_Switch",
   "name": {
-	"nl": "GENERIC Shutter Timer Switch",
-	"en": "GENERIC Shutter Timer Switch"
+	"nl": "Shutter Timer Switch",
+	"en": "Shutter Timer Switch"
   },
   "class": "curtain",
   "capabilities": [
 	"windowcoverings_state"
   ],
   "pair": [
-	{
-	  "id": "pair"
-	}
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": { "next": "add_devices" },
+      "options": { "singular": true }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
   ],
   "settings": [
 	{
@@ -65,7 +72,50 @@
 			"en": "Version",
 			"nl": "Version"
 		  }
-		}
+		},
+		{
+		  "id": "mode",
+		  "type": "dropdown",
+		  "value": "onoff",
+		  "label": { "en": "on off" },
+		  "values": [
+			{
+			  "id": "onoff",
+			  "label": { "en": "on off" }
+			},
+			{
+			  "id": "updown",
+			  "label": { "en": "up down" }
+			}
+		  ]
+		},
+		{
+		  "id": "DeviceTypeCode",
+		  "type": "label",
+		  "value": "cl",
+		  "label": {
+			"en": "DeviceType",
+			"nl": "DeviceType"
+		  }
+		},
+		{
+		  "id": "ProductIDCode",
+		  "type": "label",
+		  "value": "",
+		  "label": {
+			"en": "DeviceType",
+			"nl": "DeviceType"
+		  }
+		},		
+		{
+		  "id": "ModelTypeCode",
+		  "type": "label",
+		  "value": "",
+		  "label": {
+			"en": "ModelType",
+			"nl": "ModelType"
+		  }
+		}		
 	  ]
 	}
   ],

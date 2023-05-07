@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- The '/homey.js' script must be included in your settings view to work -->
+    <script
+      type="text/javascript"
+      src="/homey.js"
+      data-origin="settings"
+    ></script>
+  </head>
+  <body>
+    <header class="homey-header">
+      <h1 class="homey-title" data-i18n="settings.title">
+        <!-- This will be filled with the translated string with key 'settings.title'. -->
+      </h1>
+    </header>
+
+    <fieldset class="homey-form-fieldset">
+      <div class="homey-form-group">
+        <label class="homey-form-label" for="apikey"><span data-i18n="settings.apikey"></label>
+        <input class="homey-form-input" id="apikey" type="text" value="" />
+      </div>
+
+      <div class="homey-form-group">
+        <label class="homey-form-label" for="apipassword"><span data-i18n="settings.apipassword"></label>
+        <input class="homey-form-input" id="apipassword" type="text" value="" />
+      </div>
+	  
+      <div class="homey-form-group">
+        <label class="homey-form-label" for="randomkey"><span data-i18n="settings.randomkey"></label>
+        <input class="homey-form-input" id="randomkey" type="text" value="" />
+      </div>
+	  
+      <div class="homey-form-group">
+        <label class="homey-form-label" for="region"><span data-i18n="settings.region"></label>
+        <input class="homey-form-input" id="region" type="text" value="" />
+      </div>
+    </fieldset>
+
+    <button id="save" class="homey-button-primary-full"><span data-i18n="settings.save"></button>
+
+    <script type="text/javascript">
+      // a method named 'onHomeyReady' must be present in your code
+      function onHomeyReady(Homey) {
+        // Tell Homey we're ready to be displayed
+        Homey.ready();
+
+            var apikeyElement = document.getElementById('apikey');
+            var apipasswordElement = document.getElementById('apipassword');
+            var randomkeyElement = document.getElementById('randomkey');
+            var regionElement = document.getElementById('region');
+            var saveElement = document.getElementById('save');
+
+            Homey.get('apikey', function (err, apikey) {
+                if (err) return Homey.alert(err);
+                apikeyElement.value = apikey;
+            });
+
+            Homey.get('apipassword', function (err, apipassword) {
+                if (err) return Homey.alert(err);
+                apipasswordElement.value = apipassword;
+            });
+
+            Homey.get('randomkey', function (err, randomkey) {
+                if (err) return Homey.alert(err);
+                randomkeyElement.value = randomkey;
+            });
+
+            Homey.get('region', function (err, region) {
+                if (err) return Homey.alert(err);
+                regionElement.value = region;
+            });
+
+        saveElement.addEventListener("click", function (e) {
+                let apikey = apikeyElement.value;
+                let apipassword = apipasswordElement.value;
+                let randomkey = randomkeyElement.value;
+                let region = regionElement.value;
+				
+                if (!apikey || apikey.length === 0) {
+                    return Homey.alert(Homey.__("settings.apikey") +" "+ Homey.__("settings.isrequired") );
+                }  
+                if (!apipassword || apipassword.length === 0) {
+                    return Homey.alert(Homey.__("settings.apipassword") +" "+ Homey.__("settings.isrequired") );
+                }
+                if (!randomkey || randomkey.length === 0) {
+                    return Homey.alert(Homey.__("settings.randomkey") +" "+ Homey.__("settings.isrequired") );
+                }
+                if (!region || region.length === 0) {
+                    return Homey.alert(Homey.__("settings.region") +" "+ Homey.__("settings.region") );
+                }				
+                Homey.set('apikey', apikey, function (err) {
+                    if (err) return Homey.alert(err);
+                });
+
+                Homey.set('apipassword', apipassword, function (err) {
+                    if (err) return Homey.alert(err);
+                });
+
+                Homey.set('randomkey', randomkey, function (err) {
+                    if (err) return Homey.alert(err);
+                });
+				Homey.set('region', region, function (err) {
+                    if (err) return Homey.alert(err);
+                });
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -80,5 +80,6 @@
   "images": {
 	"large": "/drivers/LSC_Smart_Filament_LED/assets/images/large.png",
 	"small": "/drivers/LSC_Smart_Filament_LED/assets/images/small.png"
-  }
+  },
+  "deprecated": true
 }

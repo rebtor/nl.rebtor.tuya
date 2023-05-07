@@ -184,5 +184,6 @@
   "images": {
 	"large": "/drivers/AOFO_WiFi_Smart_Power_Strip/assets/images/large.png",
 	"small": "/drivers/AOFO_WiFi_Smart_Power_Strip/assets/images/small.png"
-  }
+  },
+  	 "deprecated": true
 }

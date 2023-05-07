@@ -5,17 +5,17 @@
     "nl": "Tuya"
   },
   "description": {
-    "en": "A Tuyapi implementation for homey",
-    "nl": "Een Tuyapi implementatie voor homey"
+    "en": "Local control for Tuya devices",
+    "nl": "Lokale bediening van Tuya devices"
   },
   "category": [
     "lights"
   ],
-  "version": "2.1.4",
+  "version": "3.1.1",
   "compatibility": ">=5.0.0",
   "homeyCommunityTopicId": 15811,
   "sdk": 3,
-  "brandColor": "#507672",
+  "brandColor": "#FA6616",
   "author": {
     "name": "Rens Brandwijk",
     "email": "rebtor@gmail.com"
@@ -23,7 +23,7 @@
   "contributing": {
     "donate": {
       "paypal": {
-        "username": "rebtor"
+        "username": "@rebtor"
       }
     }
   },

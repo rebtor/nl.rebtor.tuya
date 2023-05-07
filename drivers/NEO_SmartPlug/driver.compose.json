@@ -78,5 +78,6 @@
   "images": {
 	"large": "/drivers/NEO_SmartPlug/assets/images/large.png",
 	"small": "/drivers/NEO_SmartPlug/assets/images/small.png"
-  }
+  },
+  "deprecated": true
 }

@@ -72,5 +72,6 @@
   "images": {
 	"large": "/drivers/ANCCY_Shutter_Timer_Switch/assets/images/large.png",
 	"small": "/drivers/ANCCY_Shutter_Timer_Switch/assets/images/small.png"
-  }
+  },
+  	 "deprecated": true
 }
