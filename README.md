@@ -3,6 +3,14 @@
 A implementation of [TuyAPI] (https://github.com/codetheweb/tuyapi/) for use with homey. 
 
 ## CHANGELOG
+* 3.1.1
+	- Small changes to readme
+* 3.1.0
+	- Deprecated all non generic devices. Updated images to fit appstore requirements
+* 3.0.0
+	- Homey pro 2023 ready, added automated discovery for generic devices (fill in the settings page), NEO, and LSC strip are now deprecated use the generic devices. 
+* 2.1.4
+	- Fixed crash with multisocket devices
 * 2.1.3
 	- Fixed crash with multisocket devices
 * 2.1.2
@@ -77,9 +85,5 @@ Warning: This app is not plug and play finding the ID and Key needed tot communi
 - Some devices ship with older firmware that may not work with `tuyapi`.  If you're experiencing issues, please try updating the device's firmware in the official app.
 
 
-## DEVICES
-- NEO Coolcam 2000 watt smartplug
-- NEO Coolcam 3600 watt smartplug
-- LSC Smart LED light Strip (action)
-- LSC smart power plug (action)
+
 
