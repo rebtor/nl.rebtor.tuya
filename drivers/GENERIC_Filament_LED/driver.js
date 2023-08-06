@@ -45,7 +45,7 @@ class Socketdriver extends Homey.Driver {
 	const APIKey = this.homey.settings.get('apikey');
 	const APISecret = this.homey.settings.get('apipassword');
 	const APIRegion = this.homey.settings.get('region');
-	const DeviceID = this.homey.settings.get('randomkey');
+	const DeviceID = this.homey.settings.get('randomDeviceId');
 	
 	// Stel URL samen
 	const url = 'https://openapi.tuya'+ APIRegion +'.com';

@@ -27,8 +27,8 @@
       </div>
 	  
       <div class="homey-form-group">
-        <label class="homey-form-label" for="randomkey"><span data-i18n="settings.randomkey"></label>
-        <input class="homey-form-input" id="randomkey" type="text" value="" />
+        <label class="homey-form-label" for="randomDeviceId"><span data-i18n="settings.randomDeviceId"></label>
+        <input class="homey-form-input" id="randomDeviceId" type="text" value="" />
       </div>
 	  
       <div class="homey-form-group">
@@ -47,7 +47,7 @@
 
             var apikeyElement = document.getElementById('apikey');
             var apipasswordElement = document.getElementById('apipassword');
-            var randomkeyElement = document.getElementById('randomkey');
+            var randomDeviceIdElement = document.getElementById('randomDeviceId');
             var regionElement = document.getElementById('region');
             var saveElement = document.getElementById('save');
 
@@ -61,9 +61,9 @@
                 apipasswordElement.value = apipassword;
             });
 
-            Homey.get('randomkey', function (err, randomkey) {
+            Homey.get('randomDeviceId', function (err, randomDeviceId) {
                 if (err) return Homey.alert(err);
-                randomkeyElement.value = randomkey;
+                randomDeviceIdElement.value = randomDeviceId;
             });
 
             Homey.get('region', function (err, region) {
@@ -74,7 +74,7 @@
         saveElement.addEventListener("click", function (e) {
                 let apikey = apikeyElement.value;
                 let apipassword = apipasswordElement.value;
-                let randomkey = randomkeyElement.value;
+                let randomDeviceId = randomDeviceIdElement.value;
                 let region = regionElement.value;
 				
                 if (!apikey || apikey.length === 0) {
@@ -83,8 +83,8 @@
                 if (!apipassword || apipassword.length === 0) {
                     return Homey.alert(Homey.__("settings.apipassword") +" "+ Homey.__("settings.isrequired") );
                 }
-                if (!randomkey || randomkey.length === 0) {
-                    return Homey.alert(Homey.__("settings.randomkey") +" "+ Homey.__("settings.isrequired") );
+                if (!randomDeviceId || randomDeviceId.length === 0) {
+                    return Homey.alert(Homey.__("settings.randomDeviceId") +" "+ Homey.__("settings.isrequired") );
                 }
                 if (!region || region.length === 0) {
                     return Homey.alert(Homey.__("settings.region") +" "+ Homey.__("settings.region") );
@@ -97,7 +97,7 @@
                     if (err) return Homey.alert(err);
                 });
 
-                Homey.set('randomkey', randomkey, function (err) {
+                Homey.set('randomDeviceId', randomDeviceId, function (err) {
                     if (err) return Homey.alert(err);
                 });
 				Homey.set('region', region, function (err) {
