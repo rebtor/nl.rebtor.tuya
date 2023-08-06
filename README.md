@@ -1,6 +1,6 @@
 ﻿# Tuya devices homey app🌧 🔌
 
-A implementation of [TuyAPI] (https://github.com/codetheweb/tuyapi/) for use with homey. 
+A implementation of [TuyAPI](https://github.com/codetheweb/tuyapi/) for use with Homey. 
 
 ## CHANGELOG
 * 3.1.1
