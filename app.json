@@ -36,6 +36,13 @@
     "url": "https://github.com/rebtor/nl.rebtor.tuya/issues"
   },
   "source": "https://github.com/rebtor/nl.rebtor.tuya",
+  "contributors": {
+    "developers": [
+      {
+        "name": "Tor Arne Vestbø"
+      }
+    ]
+  },
   "flow": {
     "triggers": [
       {
