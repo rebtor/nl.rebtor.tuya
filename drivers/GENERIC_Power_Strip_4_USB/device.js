@@ -1,79 +1,41 @@
 'use strict';
 
-//constanten
-const Homey = require('homey');
+const Tuya = require('../../lib/tuya');
 const Tuydriver = require('tuydriver');
-const TuyAPI = require('tuyapi');
-var device = {};
 
-// start device
-class TuyaDevice extends Homey.Device {
+class Device extends Tuya.Device {
+    async onInit() {
+        super.onInit();
 
-    onInit() {
-        const Driveromschrijving = this.driver.manifest.name.en;
-        Tuydriver.devicelog('Device name: ', Driveromschrijving + ': '+ this.getName()+ ' has been inited');
-        Tuydriver.clearlog(this);
-        Tuyadevicedata(this)
+        this.tuyapi.on('data', data => {
+            Tuydriver.devicelog('Data from device:', data, 'mulsoc');
+            Tuydriver.processdata(this, data, 'mulsoc');
+        });
+
+        this.registerCapabilityListener('onoff', async(value) => {
+            Tuydriver.sendvalues(this, this.tuyapi, value, 'mulsoc');
+        });
+
+        this.registerCapabilityListener('onoff.soc1', async(value) => {
+            Tuydriver.sendvalues(this, this.tuyapi, value, 'mulsoc1');
+        });
+
+        this.registerCapabilityListener('onoff.soc2', async(value) => {
+            Tuydriver.sendvalues(this, this.tuyapi, value, 'mulsoc2');
+        });
+
+        this.registerCapabilityListener('onoff.soc3', async(value) => {
+            Tuydriver.sendvalues(this, this.tuyapi, value, 'mulsoc3');
+        });
+
+        this.registerCapabilityListener('onoff.soc4', async(value) => {
+            Tuydriver.sendvalues(this, this.tuyapi, value, 'mulsoc4');
+        });
+
+        this.registerCapabilityListener('onoff.socusb', async(value) => {
+            Tuydriver.sendvalues(this, this.tuyapi, value, 'mulsocusb');
+        });
     }
 };
 
-function Tuyadevicedata(device_data) {
-    var device = device_data;
-    var APIdevice = new TuyAPI({
-            id: device.getSetting('ID'),
-            key: device.getSetting('Key'),
-            ip: device.getSetting('IP'),
-			version: device.getSetting('Version')
-        });
-
-    device.setUnavailable();
-    Tuydriver.reconnect(APIdevice, device);
-
-    // Add event listeners
-    APIdevice.on('connected', () => {
-        Tuydriver.devicelog('Connected to device!');
-        device.setAvailable();
-    });
-
-    APIdevice.on('disconnected', () => {
-        Tuydriver.devicelog('Disconnected from device.');
-        device.setUnavailable();
-    });
-
-    APIdevice.on('error', error => {
-        Tuydriver.devicelog('Error: ', error);
-        device.setUnavailable();
-    });
-
-    APIdevice.on('data', data => {
-        Tuydriver.devicelog('Data from device:', data, 'mulsoc');
-        Tuydriver.processdata(device, data, 'mulsoc');
-    });
-
-    device.registerCapabilityListener('onoff', async(value) => {
-        Tuydriver.sendvalues(device, APIdevice, value, 'mulsoc');
-    });
-
-    device.registerCapabilityListener('onoff.soc1', async(value) => {
-        Tuydriver.sendvalues(device, APIdevice, value, 'mulsoc1');
-    });
-
-    device.registerCapabilityListener('onoff.soc2', async(value) => {
-        Tuydriver.sendvalues(device, APIdevice, value, 'mulsoc2');
-    });
-
-    device.registerCapabilityListener('onoff.soc3', async(value) => {
-        Tuydriver.sendvalues(device, APIdevice, value, 'mulsoc3');
-    });
-
-    device.registerCapabilityListener('onoff.soc4', async(value) => {
-        Tuydriver.sendvalues(device, APIdevice, value, 'mulsoc4');
-    });
-
-    device.registerCapabilityListener('onoff.socusb', async(value) => {
-        Tuydriver.sendvalues(device, APIdevice, value, 'mulsocusb');
-    });
-
-}
-
-module.exports = TuyaDevice;
+module.exports = Device;
