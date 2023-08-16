@@ -24,13 +24,24 @@
   "contributing": {
     "donate": {
       "paypal": {
-        "username": "rebtor"
+        "username": "@rebtor"
       }
     }
   },
   "images": {
     "large": "/assets/images/large.png",
     "small": "/assets/images/small.png"
+  },
+  "bugs": {
+    "url": "https://github.com/rebtor/nl.rebtor.tuya/issues"
+  },
+  "source": "https://github.com/rebtor/nl.rebtor.tuya",
+  "contributors": {
+    "developers": [
+      {
+        "name": "Tor Arne Vestbø"
+      }
+    ]
   },
   "flow": {
     "triggers": [

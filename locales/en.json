@@ -18,7 +18,7 @@
   	"settings": {
 		"apikey": "api key",
 		"apipassword": "api password",
-		"randomkey": "Random devicekey",
+		"randomDeviceId": "Random device ID",
 		"region": "Region",
 		"title": "Tuya Settings",
 		"save": "Save",

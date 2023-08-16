@@ -1,68 +1,29 @@
 'use strict';
 
-//constanten
-const Homey = require('homey');
+const Tuya = require('../../lib/tuya');
 const Tuydriver = require('tuydriver');
-const TuyAPI = require('tuyapi');
 
-var device = {};
+class Device extends Tuya.Device {
+    async onInit() {
+        super.onInit();
 
-// start device
-class TuyaDevice extends Homey.Device {
+        this.tuyapi.on('data', data => {
+            if (this.getSetting('mode') == 'onoff') {
+                Tuydriver.devicelog('Data from device:', data, 'windowcoverings_state2');}
+            else {
+                Tuydriver.devicelog('Data from device:', data, 'windowcoverings_state');
+            }
+            Tuydriver.processdata(this, data);
+        });
 
-	onInit() {
-        const Driveromschrijving = this.driver.manifest.name.en;
-        Tuydriver.devicelog('Device name: ', Driveromschrijving + ': '+ this.getName()+ ' has been inited');
-        Tuydriver.clearlog(this);
-        Tuyadevicedata(this)
+        this.registerCapabilityListener('windowcoverings_state', async(value) => {
+            if (this.getSetting('mode') == 'onoff') {
+                Tuydriver.sendvalues(this, this.tuyapi, value, 'windowcoverings_state2');}
+            else {
+                Tuydriver.sendvalues(this, this.tuyapi, value, 'windowcoverings_state');
+            }
+        });
     }
 };
 
-function Tuyadevicedata(device_data) {
-    var device = device_data;
-    var APIdevice = new TuyAPI({
-            id: device.getSetting('ID'),
-            key: device.getSetting('Key'),
-            ip: device.getSetting('IP'),
-			version: device.getSetting('Version')
-        });
-
-    device.setUnavailable();
-    Tuydriver.reconnect(APIdevice, device);
-
-    // Add event listeners
-    APIdevice.on('connected', () => {
-        Tuydriver.devicelog('Connected to device!');
-        device.setAvailable();
-    });
-
-    APIdevice.on('disconnected', () => {
-        Tuydriver.devicelog('Disconnected from device.');
-        device.setUnavailable();
-    });
-
-    APIdevice.on('error', error => {
-        Tuydriver.devicelog('Error: ', error);
-        device.setUnavailable();
-    });
-
-    APIdevice.on('data', data => {
-        if(device.getSetting('mode') == 'onoff') {
-		Tuydriver.devicelog('Data from device:', data, 'windowcoverings_state2');}
-		else {
-		Tuydriver.devicelog('Data from device:', data, 'windowcoverings_state');
-		}
-        Tuydriver.processdata(device, data);
-    });
-
-    device.registerCapabilityListener('windowcoverings_state', async(value) => {
-        if(device.getSetting('mode') == 'onoff') {
-		Tuydriver.sendvalues(device, APIdevice, value, 'windowcoverings_state2');}
-		else {
-		Tuydriver.sendvalues(device, APIdevice, value, 'windowcoverings_state');	
-		}
-    });
-
-}
-
-module.exports = TuyaDevice;
+module.exports = Device;
